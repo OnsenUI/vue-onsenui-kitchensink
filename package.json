@@ -9,9 +9,10 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "onsenui": "2.2.x",
+    "onsenui": "^2.2.0",
     "vue": "^2.2.4",
-    "vue-onsenui": "^2.0.0-alpha.1"
+    "vue-onsenui": "^2.0.0-alpha.1",
+    "vuex": "^2.2.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

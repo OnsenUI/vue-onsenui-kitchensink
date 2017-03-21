@@ -1,17 +1,20 @@
 import Vue from 'vue';
-
+import Vuex from 'vuex';
+import VueOnsen from 'vue-onsenui';
+import BackToolbar from './partials/BackToolbar.vue';
+import storeLike from './NavigatorStore.js';
+import AppNavigator from './AppNavigator.vue';
 // Onsen UI basic CSS
 import 'onsenui/css/onsenui.css';
 // Onsen UI CSS components source (requires cssnext)
 import 'onsenui/css-components-src/src/onsen-css-components.css';
-// Onsen UI bindings for Vue (this already imports onsenui package)
-import VueOnsen from 'vue-onsenui';
 
+Vue.use(Vuex);
 Vue.use(VueOnsen);
-
-import App from './App.vue';
+Vue.component('back-toolbar', BackToolbar); // Common toolbar
 
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(AppNavigator),
+  store: new Vuex.Store(storeLike)
 });
