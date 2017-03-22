@@ -23,25 +23,30 @@ export default {
       tabs: [
         {
           label: 'Home',
-          page: Home,
-          icon: 'ion-home'
+          icon: this.md() ? null : 'ion-home',
+          page: Home
         },
         {
           label: 'Forms',
-          page: Forms,
-          icon: 'ion-edit'
+          icon: this.md() ? null : 'ion-edit',
+          page: Forms
         },
         {
           label: 'Animations',
-          page: Animations,
-          icon: 'ion-film-marker'
+          icon: this.md() ? null : 'ion-film-marker',
+          page: Animations
         }
       ]
     };
   },
+  methods: {
+    md() {
+      return this.$ons.platform.isAndroid();
+    }
+  },
   computed: {
     title() {
-      return this.tabs[this.index].label;
+      return this.md() ? 'Kitchen Sink' : this.tabs[this.index].label;
     }
   }
 }

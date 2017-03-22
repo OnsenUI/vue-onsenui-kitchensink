@@ -2,7 +2,7 @@
   <v-ons-page>
     <v-ons-list>
       <v-ons-list-header>Text input</v-ons-list-header>
-      <v-ons-list-item>
+      <v-ons-list-item :modifier="$ons.platform.isAndroid() ? 'nodivider' : ''">
         <div class="left">
           <v-ons-icon icon="md-face" class="list-item__icon"></v-ons-icon>
         </div>
@@ -43,7 +43,7 @@
       <v-ons-list-header>Select</v-ons-list-header>
       <ons-list-item>
         <div class="center">
-          <v-ons-select style="width: 200px" v-ons-model="selectedItem">
+          <v-ons-select style="width: 120px" v-ons-model="selectedItem">
             <option v-for="item in items" :value="item.value">
               {{ item.text }}
             </option>
@@ -51,7 +51,8 @@
 
         </div>
         <div class="right">
-          {{ selectedItem }} is awesome!
+          <s v-show="selectedItem !== 'Vue'">{{ selectedItem }}</s>
+          Vue is awesome!
         </div>
       </ons-list-item>
 
