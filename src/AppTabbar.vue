@@ -13,7 +13,6 @@
 
 <script>
 import Home from './pages/Home.vue';
-import Dialogs from './pages/Dialogs.vue';
 import Forms from './pages/Forms.vue';
 import Animations from './pages/Animations.vue';
 
@@ -26,11 +25,6 @@ export default {
           label: 'Home',
           page: Home,
           icon: 'ion-home'
-        },
-        {
-          label: 'Dialogs',
-          page: Dialogs,
-          icon: 'ion-ios-albums-outline'
         },
         {
           label: 'Forms',

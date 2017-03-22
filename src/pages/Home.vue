@@ -26,12 +26,14 @@
 
 <script>
 import PullHook from './PullHook.vue';
+import Dialogs from './Dialogs.vue';
 
 export default {
   data () {
     return {
       pages: {
-        PullHook
+        PullHook,
+        Dialogs
       }
     };
   },
