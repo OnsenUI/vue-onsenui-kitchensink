@@ -1,6 +1,5 @@
 <template>
   <v-ons-page>
-    <div class="content">
     <img class="img" src="../assets/vue-onsenui.png">
 
     <p class="p">
@@ -20,7 +19,6 @@
         <div class="center">{{ key }}</div>
       </v-ons-list-item>
     </v-ons-list>
-    </div>
   </v-ons-page>
 </template>
 

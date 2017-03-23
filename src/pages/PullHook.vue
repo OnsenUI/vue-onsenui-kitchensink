@@ -1,6 +1,6 @@
 <template>
   <v-ons-page>
-    <back-toolbar v-bind="toolbarInfo"></back-toolbar>
+    <custom-toolbar v-bind="toolbarInfo"></custom-toolbar>
 
     <v-ons-pull-hook
       threshold-height="120px"

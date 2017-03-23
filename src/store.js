@@ -26,6 +26,23 @@ export default {
           state.stack = [page || state.stack[0]];
         }
       }
+    },
+
+    splitter: {
+      strict: true,
+      namespaced: true,
+      state: {
+        open: false
+      },
+      mutations: {
+        toggle(state, shouldOpen) {
+          if (shouldOpen instanceof Boolean) {
+            state.open = shouldOpen;
+          } else {
+            state.open = !state.open;
+          }
+        }
+      }
     }
   }
 };

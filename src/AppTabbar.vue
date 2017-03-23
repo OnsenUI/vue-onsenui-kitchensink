@@ -1,6 +1,11 @@
 <template>
   <v-ons-page>
-    <back-toolbar>{{ title }}</back-toolbar>
+    <custom-toolbar>
+      <v-ons-toolbar-button slot="left" @click="$store.commit('splitter/toggle')">
+        <v-ons-icon icon="ion-navicon, material:md-menu"></v-ons-icon>
+      </v-ons-toolbar-button>
+      {{ title }}
+    </custom-toolbar>
 
     <v-ons-tabbar
       position="auto"

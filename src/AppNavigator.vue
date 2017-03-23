@@ -6,12 +6,12 @@
 </template>
 
 <script>
-import AppTabbar from './AppTabbar.vue';
+import AppSplitter from './AppSplitter.vue';
 
 export default {
   name: 'app',
   beforeCreate() {
-    this.$store.commit('navigator/push', AppTabbar);
+    this.$store.commit('navigator/push', AppSplitter);
   },
   computed: {
     pageStack() {

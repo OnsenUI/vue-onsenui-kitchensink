@@ -1,9 +1,11 @@
 <template>
   <v-ons-toolbar>
     <div class="left">
-      <v-ons-back-button v-if="backLabel">
-        {{ backLabel }}
-      </v-ons-back-button>
+      <slot name="left">
+        <v-ons-back-button v-if="backLabel">
+          {{ backLabel }}
+        </v-ons-back-button>
+      </slot>
     </div>
     <div class="center"><slot>{{ title }}</slot></div>
     <div class="right"><slot name="right"></slot></div>

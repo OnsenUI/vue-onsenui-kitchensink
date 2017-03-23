@@ -1,11 +1,12 @@
 <template>
   <v-ons-page>
-    <back-toolbar v-bind="toolbarInfo">
+    <custom-toolbar v-bind="toolbarInfo">
       <v-ons-toolbar-button slot="right" id="info-button" @click="popoverVisible = true">
         <v-ons-icon v-if="$ons.platform.isAndroid()" icon="md-more-vert"></v-ons-icon>
         <span v-else>More</span>
       </v-ons-toolbar-button>
-    </back-toolbar>
+    </custom-toolbar>
+
     <v-ons-list>
       <v-ons-list-header>Notifications</v-ons-list-header>
       <v-ons-list-item
