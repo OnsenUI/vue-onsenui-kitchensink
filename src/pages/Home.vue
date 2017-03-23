@@ -22,13 +22,15 @@
 <script>
 import PullHook from './PullHook.vue';
 import Dialogs from './Dialogs.vue';
+import InfiniteScroll from './InfiniteScroll.vue';
 
 export default {
   data () {
     return {
       pages: {
         PullHook,
-        Dialogs
+        Dialogs,
+        InfiniteScroll
       }
     };
   },

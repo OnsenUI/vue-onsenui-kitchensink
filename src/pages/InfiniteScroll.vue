@@ -1,0 +1,98 @@
+<template>
+  <v-ons-page>
+    <custom-toolbar v-bind="toolbarInfo"></custom-toolbar>
+
+    <v-ons-tabbar position="auto">
+      <template slot="pages">
+
+        <!-- Load more items on scroll bottom -->
+        <v-ons-page :infinite-scroll="loadMore">
+          <p class="intro">
+            Useful for loading more items when the scroll reaches the bottom of the page, typically after an asynchronous API call.<br><br>
+          </p>
+
+          <v-ons-list>
+            <v-ons-list-item v-for="item in normalList" :key="item">
+              Item #{{ item }}
+            </v-ons-list-item>
+          </v-ons-list>
+
+          <div class="after-list">
+            <v-ons-icon icon="fa-spinner" size="26px" spin></v-ons-icon>
+          </div>
+        </v-ons-page>
+
+        <!-- Lazy load thousands of items -->
+        <v-ons-page>
+          <p class="intro">
+            Automatically unloads items that are not visible and loads new ones. Useful when the list contains hundreds, thousands or millions of items.<br><br>
+          </p>
+
+          <v-ons-list>
+            <v-ons-lazy-repeat :render-item="renderItem" :length="3000"></v-ons-lazy-repeat>
+          </v-ons-list>
+        </v-ons-page>
+      </template>
+
+      <v-ons-tab label="Load More"></v-ons-tab>
+      <v-ons-tab label="Lazy Repeat" active></v-ons-tab>
+    </v-ons-tabbar>
+
+  </v-ons-page>
+</template>
+
+<script>
+import Vue from 'vue';
+
+export default {
+  data() {
+    return {
+      normalList: [],
+      lazyList: []
+    };
+  },
+  beforeMount() {
+    for (let i = 0; i < 30; i++) {
+      this.normalList.push(i);
+    }
+  },
+  methods: {
+    loadMore(done) {
+      setTimeout(() => {
+        for (let i = 0; i < 10; i++) {
+          this.normalList.push(this.normalList.length + i);
+        }
+        done();
+      }, 600)
+    },
+
+    renderItem(i) {
+      return new Vue({
+        template: `
+          <v-ons-list-item :key="index">
+            Item #{{ index }}
+          </v-ons-list-item>
+        `,
+        data() {
+          return {
+            index: i
+          };
+        }
+      });
+    }
+  }
+}
+</script>
+
+<style scoped>
+.intro {
+  text-align: center;
+  padding: 0 20px;
+  margin-top: 40px;
+}
+
+.after-list {
+  margin: 20px;
+  text-align: center;
+}
+</style>
