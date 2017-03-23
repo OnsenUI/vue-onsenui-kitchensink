@@ -11,7 +11,7 @@
       position="auto"
       :tabs="tabs"
       :index="index"
-      @update="index = $event"
+      @update="$store.commit('tabbar/set', $event)"
     ></v-ons-tabbar>
   </v-ons-page>
 </template>
@@ -24,7 +24,6 @@ import Animations from './pages/Animations.vue';
 export default {
   data () {
     return {
-      index: 0,
       tabs: [
         {
           label: 'Home',
@@ -50,6 +49,9 @@ export default {
     }
   },
   computed: {
+    index() {
+      return this.$store.state.tabbar.index;
+    },
     title() {
       return this.md() ? 'Kitchen Sink' : this.tabs[this.index].label;
     }

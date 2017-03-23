@@ -1,10 +1,7 @@
 <template>
   <v-ons-page>
-    <img class="img" src="../assets/vue-onsenui.png">
-
-    <p class="p">
+    <p class="intro">
       This is a kitchen sink example that shows off the Vue bindings for Onsen UI.<br><br>
-      <a href="https://onsen.io/vue/" target="_blank"><strong>Official site with docs</strong></a>
     </p>
 
     <v-ons-list>
@@ -55,15 +52,9 @@ export default {
 </script>
 
 <style scoped>
-.img {
-  display: block;
-  max-width: 60%;
-  margin: 10px auto;
-}
-
-.p {
+.intro {
   text-align: center;
   padding: 0 20px;
-  margin-bottom: 30px;
+  margin-top: 40px;
 }
 </style>

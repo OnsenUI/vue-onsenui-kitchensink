@@ -87,7 +87,8 @@
       </v-ons-page>
     </v-ons-dialog>
 
-    <v-ons-alert-dialog modifier="rowfooter"
+    <v-ons-alert-dialog
+      :modifier="$ons.platform.isAndroid() ? '' : 'rowfooter'"
       :title="'Hey!!'"
       :footer="{
         'Wat': () => alertDialogVisible = false,
