@@ -1,12 +1,13 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: './dist/',
+    publicPath: '',
     filename: 'build.js'
   },
   module: {
@@ -57,7 +58,10 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin('main.css')
+    new ExtractTextPlugin('[name].css'),
+    new HtmlWebpackPlugin({
+      template: 'src/index.html'
+    })
   ],
   resolve: {
     alias: {
