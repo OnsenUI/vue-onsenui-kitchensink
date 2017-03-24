@@ -2,6 +2,7 @@
   <v-ons-navigator id="app"
     :page-stack="pageStack"
     :pop-page="storePop"
+    :options="options"
   ></v-ons-navigator>
 </template>
 
@@ -16,6 +17,9 @@ export default {
   computed: {
     pageStack() {
       return this.$store.state.navigator.stack;
+    },
+    options() {
+      return this.$store.state.navigator.options;
     }
   },
   methods: {

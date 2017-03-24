@@ -4,7 +4,8 @@ export default {
       strict: true,
       namespaced: true,
       state: {
-        stack: []
+        stack: [],
+        options: {}
       },
       mutations: {
         push(state, page) {
@@ -24,6 +25,9 @@ export default {
         },
         reset(state, page) {
           state.stack = [page || state.stack[0]];
+        },
+        options(state, newOptions = {}) {
+          state.options = newOptions;
         }
       }
     },
