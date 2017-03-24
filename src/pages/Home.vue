@@ -23,6 +23,7 @@
 import PullHook from './PullHook.vue';
 import Dialogs from './Dialogs.vue';
 import InfiniteScroll from './InfiniteScroll.vue';
+import Carousel from './Carousel.vue';
 
 export default {
   data () {
@@ -30,7 +31,8 @@ export default {
       pages: {
         PullHook,
         Dialogs,
-        InfiniteScroll
+        InfiniteScroll,
+        Carousel
       }
     };
   },
