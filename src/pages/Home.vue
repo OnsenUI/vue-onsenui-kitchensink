@@ -25,6 +25,7 @@ import Dialogs from './Dialogs.vue';
 import Buttons from './Buttons.vue';
 import Carousel from './Carousel.vue';
 import InfiniteScroll from './InfiniteScroll.vue';
+import Progress from './Progress.vue';
 
 export default {
   data () {
@@ -34,7 +35,8 @@ export default {
         Dialogs,
         Buttons,
         Carousel,
-        InfiniteScroll
+        InfiniteScroll,
+        Progress
       }
     };
   },
