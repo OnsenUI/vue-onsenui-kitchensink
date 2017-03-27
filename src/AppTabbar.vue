@@ -11,7 +11,7 @@
       position="auto"
       :tabs="tabs"
       :index="index"
-      @update="$store.commit('tabbar/set', $event)"
+      @update="index = $event"
     ></v-ons-tabbar>
   </v-ons-page>
 </template>
@@ -49,8 +49,13 @@ export default {
     }
   },
   computed: {
-    index() {
-      return this.$store.state.tabbar.index;
+    index: {
+      get() {
+        return this.$store.state.tabbar.index;
+      },
+      set(newValue) {
+        this.$store.commit('tabbar/set', newValue)
+      }
     },
     title() {
       return this.md() ? 'Kitchen Sink' : this.tabs[this.index].label;
