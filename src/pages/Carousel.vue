@@ -57,7 +57,7 @@ export default {
 
 .dots {
   text-align: center;
-  font-size: 40px;
+  font-size: 30px;
   color: #fff;
   position: absolute;
   bottom: 40px;

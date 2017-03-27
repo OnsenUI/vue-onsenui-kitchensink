@@ -25,7 +25,7 @@
         <!-- Lazy load thousands of items -->
         <v-ons-page>
           <p class="intro">
-            Automatically unloads items that are not visible and loads new ones. Useful when the list contains hundreds, thousands or millions of items.<br><br>
+            Automatically unloads items that are not visible and loads new ones. Useful when the list contains thousands of items.<br><br>
           </p>
 
           <v-ons-list>
