@@ -2,7 +2,7 @@
   <v-ons-page>
     <custom-toolbar v-bind="toolbarInfo"></custom-toolbar>
 
-    <v-ons-progress-bar :modifier="!md() && 'ios'" :value="progress"></v-ons-progress-bar>
+    <v-ons-progress-bar :modifier="!md() && 'ios' || ''" :value="progress"></v-ons-progress-bar>
 
     <section style="margin: 40px 16px">
       <p>
@@ -10,22 +10,22 @@
       </p>
 
       <p>
-        <v-ons-progress-bar value="20" :modifier="!md() && 'ios'"></v-ons-progress-bar>
+        <v-ons-progress-bar value="20" :modifier="!md() && 'ios' || ''"></v-ons-progress-bar>
       </p>
 
       <p>
-        <v-ons-progress-bar value="40" secondary-value="80" :modifier="!md() && 'ios'"></v-ons-progress-bar>
+        <v-ons-progress-bar value="40" secondary-value="80" :modifier="!md() && 'ios' || ''"></v-ons-progress-bar>
       </p>
 
       <p>
-        <v-ons-progress-bar indeterminate :modifier="!md() && 'ios'"></v-ons-progress-bar>
+        <v-ons-progress-bar indeterminate :modifier="!md() && 'ios' || ''"></v-ons-progress-bar>
       </p>
 
       <div style="text-align: center; margin: 40px; color: #666">
         <p>
-          <v-ons-progress-circular value="20" :modifier="!md() && 'ios'"></v-ons-progress-circular>
-          <v-ons-progress-circular value="40" secondary-value="80" :modifier="!md() && 'ios'"></v-ons-progress-circular>
-          <v-ons-progress-circular indeterminate :modifier="!md() && 'ios'"></v-ons-progress-circular>
+          <v-ons-progress-circular value="20" :modifier="!md() && 'ios' || ''"></v-ons-progress-circular>
+          <v-ons-progress-circular value="40" secondary-value="80" :modifier="!md() && 'ios' || ''"></v-ons-progress-circular>
+          <v-ons-progress-circular indeterminate :modifier="!md() && 'ios' || ''"></v-ons-progress-circular>
         </p>
 
         <p>
