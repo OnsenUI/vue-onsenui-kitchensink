@@ -22,8 +22,9 @@
 <script>
 import PullHook from './PullHook.vue';
 import Dialogs from './Dialogs.vue';
-import InfiniteScroll from './InfiniteScroll.vue';
+import Buttons from './Buttons.vue';
 import Carousel from './Carousel.vue';
+import InfiniteScroll from './InfiniteScroll.vue';
 
 export default {
   data () {
@@ -31,8 +32,9 @@ export default {
       pages: {
         PullHook,
         Dialogs,
-        InfiniteScroll,
-        Carousel
+        Buttons,
+        Carousel,
+        InfiniteScroll
       }
     };
   },
