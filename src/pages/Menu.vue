@@ -41,10 +41,12 @@
 
 <script>
 export default {
+  props: ['toggleMenu', 'setIndex'],
+
   methods: {
     loadView(index) {
-      this.$store.commit('tabbar/set', index);
-      this.$store.commit('splitter/toggle');
+      this.setIndex(index);
+      this.toggleMenu();
     },
     loadLink(url) {
       window.open(url, '_blank');

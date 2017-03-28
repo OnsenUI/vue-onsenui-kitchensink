@@ -27,15 +27,18 @@ const transitionPage = {
 };
 
 export default {
+  props: ['pageStack', 'setOptions'],
+
   data() {
     return {
       animations: ['none', 'default', 'slide-ios', 'slide-md', 'lift-ios', 'lift-md', 'fade-ios', 'fade-md']
     };
   },
+
   methods: {
     transition(name) {
-      this.$store.commit('navigator/options', { animation: name });
-      this.$store.commit('navigator/push', {
+      this.setOptions({ animation: name });
+      this.pageStack.push({
         extends: transitionPage,
         data() {
           return {
@@ -45,8 +48,8 @@ export default {
       });
     },
     resetOptions() {
-      this.$store.commit('navigator/options', {});
+      this.setOptions({});
     }
   }
-}
+};
 </script>

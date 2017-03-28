@@ -5,11 +5,16 @@
         :open="isOpen"
         @update="isOpen = $event"
       >
-        <menu-page></menu-page>
+        <menu-page :set-index="setIndex" :toggle-menu="toggleMenu"></menu-page>
       </v-ons-splitter-side>
 
       <v-ons-splitter-content>
-        <app-tabbar></app-tabbar>
+        <app-tabbar
+          :page-stack="pageStack"
+          :set-options="setOptions"
+          :toggle-menu="toggleMenu"
+          :set-index="setIndex"
+        ></app-tabbar>
       </v-ons-splitter-content>
     </v-ons-splitter>
   </v-ons-page>
@@ -20,14 +25,22 @@ import AppTabbar from './AppTabbar.vue';
 import MenuPage from './pages/Menu.vue';
 
 export default {
-  computed: {
-    isOpen: {
-      get() {
-        return this.$store.state.splitter.open;
-      },
-      set(newValue) {
-        this.$store.commit('splitter/toggle', newValue)
+  props: ['pageStack', 'setOptions'],
+  data() {
+    return {
+      isOpen: false,
+      tabbarIndex: 0
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isOpen = !this.isOpen;
+    },
+    setIndex(newValue) {
+      if (newValue !== undefined) {
+        this.tabbarIndex = newValue;
       }
+      return this.tabbarIndex;
     }
   },
   components: { AppTabbar, MenuPage }

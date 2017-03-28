@@ -1,30 +1,25 @@
 <template>
-  <v-ons-navigator id="app"
-    :page-stack="pageStack"
-    :pop-page="storePop"
-    :options="options"
-  ></v-ons-navigator>
+  <v-ons-navigator id="app" :page-stack="pageStack" :options="options">
+    <component v-for="page in pageStack" :is="page" :key="page"
+      :page-stack="pageStack"
+      :set-options="setOptions"
+    ></component>
+  </v-ons-navigator>
 </template>
 
 <script>
 import AppSplitter from './AppSplitter.vue';
 
 export default {
-  name: 'app',
-  beforeCreate() {
-    this.$store.commit('navigator/push', AppSplitter);
-  },
-  computed: {
-    pageStack() {
-      return this.$store.state.navigator.stack;
-    },
-    options() {
-      return this.$store.state.navigator.options;
-    }
+  data() {
+    return {
+      pageStack: [AppSplitter],
+      options:  {}
+    };
   },
   methods: {
-    storePop() {
-      this.$store.commit('navigator/pop');
+    setOptions(newOptions) {
+      this.options = newOptions;
     }
   }
 };

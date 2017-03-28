@@ -28,6 +28,8 @@ import InfiniteScroll from './InfiniteScroll.vue';
 import Progress from './Progress.vue';
 
 export default {
+  props: ['pageStack'],
+
   data () {
     return {
       pages: {
@@ -43,7 +45,7 @@ export default {
 
   methods: {
     push(page, key) {
-      this.$store.commit('navigator/push', {
+      this.pageStack.push({
         extends: page,
         data() {
           return {
@@ -56,7 +58,7 @@ export default {
       });
     }
   }
-}
+};
 </script>
 
 <style scoped>
