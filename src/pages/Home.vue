@@ -5,9 +5,7 @@
     </p>
 
     <v-ons-list>
-      <v-ons-list-header>
-        Components
-      </v-ons-list-header>
+      <v-ons-list-header>Components</v-ons-list-header>
       <v-ons-list-item v-for="(page, key) of pages" :key="key"
         tappable
         modifier="chevron"

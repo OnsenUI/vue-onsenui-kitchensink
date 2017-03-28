@@ -1,5 +1,5 @@
 <template>
-  <v-ons-navigator id="app"
+  <v-ons-navigator
     :page-stack="pageStack"
     :pop-page="storePop"
     :options="options"
