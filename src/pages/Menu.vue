@@ -1,7 +1,5 @@
 <template>
   <v-ons-page modifier="menu">
-    <v-ons-toolbar modifier="transparent menu"></v-ons-toolbar>
-
     <div class="profile-pic">
       <img src="../assets/vue-onsenui.png">
     </div>
@@ -13,7 +11,7 @@
         @click="loadView(index)"
         >
         <div class="left">
-          <v-ons-icon class="list-item__icon" :icon="item.icon"></v-ons-icon>
+          <v-ons-icon fixed-width class="list-item__icon" :icon="item.icon"></v-ons-icon>
         </div>
         <div class="center">
           {{ item.title }}
@@ -26,7 +24,7 @@
         @click="loadLink(item.url)"
         >
         <div class="left">
-          <v-ons-icon class="list-item__icon" :icon="item.icon"></v-ons-icon>
+          <v-ons-icon fixed-width class="list-item__icon" :icon="item.icon"></v-ons-icon>
         </div>
         <div class="center">
           {{ item.title }}
@@ -66,6 +64,11 @@ export default {
           url: 'https://github.com/OnsenUI/OnsenUI'
         },
         {
+          title: 'Code',
+          icon: 'ion-code',
+          url: 'https://github.com/frandiox/vue-onsenui-kitchensink'
+        },
+        {
           title: 'Forum',
           icon: 'ion-chatboxes',
           url: 'https://community.onsen.io/'
@@ -99,7 +102,7 @@ export default {
 .profile-pic {
   width: 200px;
   background-color: #eee;
-  margin: 10px auto 10px;
+  margin: 50px auto 10px;
   border: 1px solid #666;
   border-radius: 4px;
 }

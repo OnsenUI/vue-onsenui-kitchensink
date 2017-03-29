@@ -10,9 +10,9 @@
     "deploy": "ghpages -p dist"
   },
   "dependencies": {
-    "onsenui": "^2.2.0",
+    "onsenui": "^2.2.1",
     "vue": "^2.2.4",
-    "vue-onsenui": "^2.0.0-alpha.1"
+    "vue-onsenui": "^2.0.0-beta.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",

@@ -15,8 +15,8 @@
         </label>
       </v-ons-list-item>
       <v-ons-list-item>
-        <div class="right">
-          Hello {{ name || 'anonymous' }}!<v-ons-icon icon="fa-hand-spock-o" class="right-icon"></v-ons-icon>
+        <div class="right right-label">
+          Hello {{ name || 'anonymous' }}!<v-ons-icon icon="fa-hand-spock-o" size="lg" class="right-icon"></v-ons-icon>
         </div>
       </v-ons-list-item>
 
@@ -50,9 +50,8 @@
           </v-ons-select>
 
         </div>
-        <div class="right">
-          <s v-show="selectedItem !== 'Vue'">{{ selectedItem }}</s>
-          Vue is awesome!
+        <div class="right right-label">
+          <s v-show="selectedItem !== 'Vue'">{{ selectedItem }}</s> Vue is awesome!
         </div>
       </ons-list-item>
 
@@ -141,5 +140,8 @@ export default {
 <style scoped>
 .right-icon {
   margin-left: 10px;
+}
+.right-label {
+  color: #666;
 }
 </style>

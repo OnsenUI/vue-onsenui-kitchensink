@@ -2623,9 +2623,9 @@ onecolor@~2.4.0:
   version "2.4.2"
   resolved "https://registry.yarnpkg.com/onecolor/-/onecolor-2.4.2.tgz#a53ec3ff171c3446016dd5210d1a1b544bf7d874"
 
-onsenui@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/onsenui/-/onsenui-2.2.0.tgz#94d18e4ad42b28c2b701f9c8c12111f1ba25e4fd"
+onsenui@^2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/onsenui/-/onsenui-2.2.1.tgz#8b168e8b8b68448bf2881ca68119fff844d236c9"
 
 opn@4.0.2:
   version "4.0.2"
