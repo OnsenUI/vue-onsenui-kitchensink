@@ -9,10 +9,7 @@ export default {
       },
       mutations: {
         push(state, page) {
-          state.stack = [
-            ...state.stack,
-            ...(page instanceof Array ? page : [page])
-          ];
+          state.stack.push(page);
         },
         pop(state) {
           if (state.stack.length > 1) {

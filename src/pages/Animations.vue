@@ -48,5 +48,5 @@ export default {
       this.$store.commit('navigator/options', {});
     }
   }
-}
+};
 </script>

@@ -81,7 +81,7 @@ export default {
       return this.$ons.platform.isAndroid();
     }
   }
-}
+};
 </script>
 
 <style>

@@ -61,5 +61,5 @@ export default {
       return this.md() ? 'Kitchen Sink' : this.tabs[this.index].label;
     }
   }
-}
+};
 </script>

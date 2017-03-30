@@ -4168,9 +4168,9 @@ vue-loader@^11.1.4:
     vue-style-loader "^2.0.0"
     vue-template-es2015-compiler "^1.2.2"
 
-vue-onsenui@^2.0.0-alpha.1:
-  version "2.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/vue-onsenui/-/vue-onsenui-2.0.0-alpha.1.tgz#24273a32b9e252b13bdb27141657933d90822ea3"
+vue-onsenui@^2.0.0-beta.0:
+  version "2.0.0-beta.0"
+  resolved "https://registry.yarnpkg.com/vue-onsenui/-/vue-onsenui-2.0.0-beta.0.tgz#3e4f0c97a38d2beb27f1c66de248f62869b8caea"
 
 vue-style-loader@^2.0.0:
   version "2.0.4"
