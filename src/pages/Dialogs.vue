@@ -12,7 +12,7 @@
       <v-ons-list-item
         tappable
         @click="$ons.notification.alert('Hello, world!')"
-        >
+      >
         <div class="center">
           Alert
         </div>
@@ -20,7 +20,7 @@
       <v-ons-list-item
         tappable
         @click="$ons.notification.confirm('Are you ready?')"
-        >
+      >
         <div class="center">
           Simple Confirmation
         </div>
@@ -28,7 +28,7 @@
       <v-ons-list-item
         tappable
         @click="$ons.notification.prompt('What is your name?')"
-        >
+      >
         <div class="center">
           Prompt
         </div>
@@ -149,7 +149,7 @@ export default {
       this.timeoutID = setTimeout(() => this.modalVisible = false, 2000);
     }
   }
-}
+};
 </script>
 
 <style>

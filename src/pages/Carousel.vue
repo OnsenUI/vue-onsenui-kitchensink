@@ -7,7 +7,7 @@
       @update="carouselIndex = $event"
       >
       <v-ons-carousel-item v-for="(value, key) in items" :key="key"
-        class="carousel-item inner-carousel"
+        class="carousel-item"
         :style="{ backgroundColor: value }"
       >
         <div class="color-tag">{{key}}</div>

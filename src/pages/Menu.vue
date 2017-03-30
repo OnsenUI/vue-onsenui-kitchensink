@@ -9,7 +9,7 @@
       <v-ons-list-item v-for="(item, index) in access" :key="item.title"
         modifier="menu chevron"
         @click="loadView(index)"
-        >
+      >
         <div class="left">
           <v-ons-icon fixed-width class="list-item__icon" :icon="item.icon"></v-ons-icon>
         </div>
@@ -22,7 +22,7 @@
       <v-ons-list-item v-for="item in links" :key="item.title"
         modifier="menu"
         @click="loadLink(item.url)"
-        >
+      >
         <div class="left">
           <v-ons-icon fixed-width class="list-item__icon" :icon="item.icon"></v-ons-icon>
         </div>
@@ -95,7 +95,7 @@ export default {
       ]
     };
   }
-}
+};
 </script>
 
 <style scoped>
