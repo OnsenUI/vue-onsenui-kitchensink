@@ -1,5 +1,5 @@
 <template>
-  <v-ons-page @show="resetOptions">
+  <v-ons-page>
     <v-ons-list>
       <v-ons-list-header>Transitions</v-ons-list-header>
       <v-ons-list-item v-for="animation in animations" :key="animation"
@@ -34,7 +34,13 @@ export default {
   },
   methods: {
     transition(name) {
-      this.$store.commit('navigator/options', { animation: name });
+      this.$store.commit('navigator/options', {
+        // Sets animations
+        animation: name,
+        // Resets default options
+        callback: () => this.$store.commit('navigator/options', {})
+      });
+
       this.$store.commit('navigator/push', {
         extends: transitionPage,
         data() {
@@ -43,9 +49,6 @@ export default {
           }
         }
       });
-    },
-    resetOptions() {
-      this.$store.commit('navigator/options', {});
     }
   }
 };
