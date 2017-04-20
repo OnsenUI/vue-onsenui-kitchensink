@@ -10,10 +10,10 @@
     "deploy": "ghpages -p dist"
   },
   "dependencies": {
-    "onsenui": "^2.2.1",
-    "vue": "^2.2.4",
-    "vue-onsenui": "^2.0.0-beta.0",
-    "vuex": "^2.2.1"
+    "onsenui": "^2.2.4",
+    "vue": "^2.2.6",
+    "vue-onsenui": "^2.0.0-beta.2",
+    "vuex": "^2.3.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -30,8 +30,8 @@
     "postcss-smart-import": "^0.6.10",
     "postcss-url": "^5.1.2",
     "style-loader": "^0.14.0",
-    "vue-loader": "^11.1.4",
-    "vue-template-compiler": "^2.2.1",
+    "vue-loader": "^11.3.4",
+    "vue-template-compiler": "^2.2.6",
     "webpack": "^2.2.0",
     "webpack-dev-server": "^2.2.0"
   }
