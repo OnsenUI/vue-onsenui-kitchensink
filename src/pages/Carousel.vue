@@ -3,9 +3,8 @@
     <custom-toolbar v-bind="toolbarInfo"></custom-toolbar>
 
     <v-ons-carousel fullscreen swipeable auto-scroll overscrollable
-      :index="carouselIndex"
-      @update="carouselIndex = $event"
-      >
+      :index.sync="carouselIndex"
+    >
       <v-ons-carousel-item v-for="(value, key) in items" :key="key"
         class="carousel-item"
         :style="{ backgroundColor: value }"

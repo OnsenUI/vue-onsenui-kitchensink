@@ -29,8 +29,7 @@
     </v-ons-fab>
 
     <v-ons-speed-dial position="bottom right" direction="up"
-      :open="spdOpen"
-      @update="spdOpen = $event"
+      :open.sync="spdOpen"
     >
       <v-ons-fab :style="spdStyle">
         <v-ons-icon icon="md-share"></v-ons-icon>
