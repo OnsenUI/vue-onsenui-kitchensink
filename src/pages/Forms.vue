@@ -1,5 +1,6 @@
 <template>
   <v-ons-page>
+
     <v-ons-list>
       <v-ons-list-header>Text input</v-ons-list-header>
       <v-ons-list-item :modifier="$ons.platform.isAndroid() ? 'nodivider' : ''">
@@ -8,7 +9,19 @@
         </div>
         <label class="center">
           <v-ons-input float maxlength="20"
-            placeholder="Input your name"
+            placeholder="Name"
+            v-ons-model="name"
+          >
+          </v-ons-input>
+        </label>
+      </v-ons-list-item>
+      <v-ons-list-item :modifier="$ons.platform.isAndroid() ? 'nodivider' : ''">
+        <div class="left">
+          <v-ons-icon icon="fa-question-circle-o" class="list-item__icon"></v-ons-icon>
+        </div>
+        <label class="center">
+          <v-ons-input type="search" maxlength="20"
+            placeholder="Search"
             v-ons-model="name"
           >
           </v-ons-input>
