@@ -7,10 +7,10 @@
       </v-ons-toolbar-button>
     </custom-toolbar>
 
-    <v-ons-list>
-      <v-ons-list-header>Notifications</v-ons-list-header>
+    <v-ons-list-title>Notifications</v-ons-list-title>
+    <v-ons-list modifier="inset">
       <v-ons-list-item
-        tappable
+        tappable modifier="longdivider"
         @click="$ons.notification.alert('Hello, world!')"
       >
         <div class="center">
@@ -18,7 +18,7 @@
         </div>
       </v-ons-list-item>
       <v-ons-list-item
-        tappable
+        tappable modifier="longdivider"
         @click="$ons.notification.confirm('Are you ready?')"
       >
         <div class="center">
@@ -26,7 +26,7 @@
         </div>
       </v-ons-list-item>
       <v-ons-list-item
-        tappable
+        tappable modifier="longdivider"
         @click="$ons.notification.prompt('What is your name?')"
       >
         <div class="center">
@@ -34,7 +34,7 @@
         </div>
       </v-ons-list-item>
       <v-ons-list-item
-        tappable
+        tappable modifier="longdivider"
         @click="$ons.notification.toast('Hi there!', { buttonLabel: 'Dismiss', timeout: 1500 })"
       >
         <div class="center">
@@ -42,16 +42,18 @@
         </div>
       </v-ons-list-item>
       <v-ons-list-item
-        tappable
+        tappable modifier="longdivider"
         @click="$ons.openActionSheet({ buttons: ['Label 1', 'Label 2', 'Label 3', 'Cancel'], destructive: 2, cancelable: true })"
       >
         <div class="center">
           Action/Bottom Sheet
         </div>
       </v-ons-list-item>
+    </v-ons-list>
 
-      <v-ons-list-header>Components</v-ons-list-header>
-      <v-ons-list-item tappable
+    <v-ons-list-title>Components</v-ons-list-title>
+    <v-ons-list modifier="inset">
+      <v-ons-list-item tappable modifier="longdivider"
         @click="dialogVisible = true"
       >
         <div class="center">
@@ -59,7 +61,7 @@
         </div>
       </v-ons-list-item>
 
-      <v-ons-list-item tappable
+      <v-ons-list-item tappable modifier="longdivider"
         @click="alertDialogVisible = true"
       >
         <div class="center">
@@ -67,7 +69,7 @@
         </div>
       </v-ons-list-item>
 
-      <v-ons-list-item tappable
+      <v-ons-list-item tappable modifier="longdivider"
         @click="toastVisible = true"
       >
         <div class="center">
@@ -75,7 +77,7 @@
         </div>
       </v-ons-list-item>
 
-      <v-ons-list-item tappable
+      <v-ons-list-item tappable modifier="longdivider"
         @click="showModal"
       >
         <div class="center">
@@ -83,7 +85,7 @@
         </div>
       </v-ons-list-item>
 
-      <v-ons-list-item tappable
+      <v-ons-list-item tappable modifier="longdivider"
         @click="popoverVisible = true"
       >
         <div class="center">
@@ -91,7 +93,7 @@
         </div>
       </v-ons-list-item>
 
-      <v-ons-list-item tappable
+      <v-ons-list-item tappable modifier="longdivider"
         @click="actionSheetVisible = true"
       >
         <div class="center">
@@ -195,5 +197,10 @@ export default {
 <style>
 .lorem-dialog .dialog-container {
   height: 200px;
+}
+</style>
+<style scoped>
+ons-list-title {
+  margin-top: 20px;
 }
 </style>
