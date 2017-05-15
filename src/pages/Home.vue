@@ -4,16 +4,12 @@
       This is a kitchen sink example that shows off the Vue bindings for Onsen UI.<br><br>
     </p>
 
-    <v-ons-list>
-      <v-ons-list-header>Components</v-ons-list-header>
-      <v-ons-list-item v-for="(page, key) of pages" :key="key"
-        tappable
-        modifier="chevron"
-        @click="push(page, key)"
+      <v-ons-card v-for="page of pages" :key="page.label"
+        @click="push(page.component, page.label)"
       >
-        <div class="center">{{ key }}</div>
-      </v-ons-list-item>
-    </v-ons-list>
+        <div class="title">{{ page.label }}</div>
+        <div class="content">{{ page.desc }}</div>
+      </v-ons-card>
   </v-ons-page>
 </template>
 
@@ -30,14 +26,38 @@ export default {
 
   data () {
     return {
-      pages: {
-        PullHook,
-        Dialogs,
-        Buttons,
-        Carousel,
-        InfiniteScroll,
-        Progress
-      }
+      pages: [
+        {
+          component: PullHook,
+          label: 'Pull Hook',
+          desc: 'Simple "pull to refresh" functionality to update data.'
+        },
+        {
+          component: Dialogs,
+          label: 'Dialogs',
+          desc: 'Components and utility methods to display many types of dialogs.'
+        },
+        {
+          component: Buttons,
+          label: 'Buttons',
+          desc: 'Different styles for buttons, floating action buttons and speed dials.'
+        },
+        {
+          component: Carousel,
+          label: 'Carousel',
+          desc: 'Customizable carousel that can be optionally fullscreen.'
+        },
+        {
+          component: InfiniteScroll,
+          label: 'Infinite Scroll',
+          desc: 'Two types of infinite lists: "Load More" and "Lazy Repeat".'
+        },
+        {
+          component: Progress,
+          label: 'Progress',
+          desc: 'Linear progress, circular progress and spinners.'
+        }
+      ]
     };
   },
 
@@ -64,5 +84,14 @@ export default {
   text-align: center;
   padding: 0 20px;
   margin-top: 40px;
+}
+
+ons-card {
+  cursor: pointer;
+  color: #333;
+}
+
+.card__title, .card--material__title {
+  font-size: 20px;
 }
 </style>

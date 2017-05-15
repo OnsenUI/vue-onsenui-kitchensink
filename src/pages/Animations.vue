@@ -16,7 +16,7 @@
 const transitionPage = {
   template: `
     <v-ons-page>
-      <custom-toolbar backLabel="Animations">
+      <custom-toolbar backLabel="Anim">
         {{ animation }}
       </custom-toolbar>
       <p style="text-align: center">

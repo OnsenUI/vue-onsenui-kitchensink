@@ -12,7 +12,7 @@
           </p>
 
           <v-ons-list>
-            <v-ons-list-item v-for="item in normalList" :key="item">
+            <v-ons-list-item v-for="item in list" :key="item">
               Item #{{ item }}
             </v-ons-list-item>
           </v-ons-list>
@@ -47,20 +47,19 @@ import Vue from 'vue';
 export default {
   data() {
     return {
-      normalList: [],
-      lazyList: []
+      list: []
     };
   },
   beforeMount() {
     for (let i = 0; i < 30; i++) {
-      this.normalList.push(i);
+      this.list.push(i);
     }
   },
   methods: {
     loadMore(done) {
       setTimeout(() => {
         for (let i = 0; i < 10; i++) {
-          this.normalList.push(this.normalList.length + i);
+          this.list.push(this.list.length + i);
         }
         done();
       }, 600)

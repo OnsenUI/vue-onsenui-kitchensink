@@ -45,7 +45,7 @@ export default {
           page: Forms
         },
         {
-          label: 'Anim.',
+          label: 'Anim',
           icon: this.md() ? null : 'ion-film-marker',
           page: Animations
         }
