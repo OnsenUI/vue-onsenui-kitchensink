@@ -1,13 +1,12 @@
 <template>
-  <v-ons-page modifier="menu">
+  <v-ons-page>
     <div class="profile-pic">
       <img src="../assets/vue-onsenui.png">
     </div>
 
-    <v-ons-list modifier="menu">
-      <v-ons-list-header modifier="menu">Access</v-ons-list-header>
+    <v-ons-list-title>Access</v-ons-list-title>
+    <v-ons-list>
       <v-ons-list-item v-for="(item, index) in access" :key="item.title"
-        modifier="menu chevron"
         @click="loadView(index)"
       >
         <div class="left">
@@ -16,11 +15,15 @@
         <div class="center">
           {{ item.title }}
         </div>
+        <div class="right">
+          <v-ons-icon icon="fa-link"></v-ons-icon>
+        </div>
       </v-ons-list-item>
+    </v-ons-list>
 
-      <v-ons-list-header modifier="menu">Links</v-ons-list-header>
+    <v-ons-list-title style="margin-top: 10px">Links</v-ons-list-title>
+    <v-ons-list>
       <v-ons-list-item v-for="item in links" :key="item.title"
-        modifier="menu"
         @click="loadLink(item.url)"
       >
         <div class="left">
@@ -99,9 +102,9 @@ export default {
 <style scoped>
 .profile-pic {
   width: 200px;
-  background-color: #eee;
-  margin: 50px auto 10px;
-  border: 1px solid #666;
+  background-color: #fff;
+  margin: 20px auto 10px;
+  border: 1px solid #999;
   border-radius: 4px;
 }
 
@@ -109,36 +112,8 @@ export default {
   display: block;
   max-width: 100%;
 }
-</style>
 
-<style>
-/* 'menu' modifier */
-.page--menu__background {
-  background-color: #333;
-}
-
-.page--menu__content {
-  color: white;
-  padding-right: 2px;
-}
-
-.toolbar--menu__center {
-  color: #fff;
-}
-
-.list--menu,
-.list-header--menu {
-  margin-top: 20px;
-  background-color: transparent;
-  background-image: none !important;
-  border-top: 0 !important;
-  color: #6c6c6c;
-}
-
-.list-item--menu {
-  background-color: transparent;
-  background-image: none !important;
-  border-color: transparent;
-  color: #fff;
+ons-list-item {
+  color: #444;
 }
 </style>

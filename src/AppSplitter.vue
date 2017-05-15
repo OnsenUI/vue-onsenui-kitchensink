@@ -1,7 +1,7 @@
 <template>
   <v-ons-page>
     <v-ons-splitter>
-      <v-ons-splitter-side swipeable collapse="" width="300px"
+      <v-ons-splitter-side swipeable side="right" collapse="" width="260px" :animation="$ons.platform.isAndroid() ? 'overlay' : 'reveal'"
         :open.sync="isOpen"
       >
         <menu-page></menu-page>
@@ -32,3 +32,9 @@ export default {
   components: { AppTabbar, MenuPage }
 };
 </script>
+
+<style>
+ons-splitter-side[animation=overlay] {
+  border-left: 1px solid #bbb;
+}
+</style>
