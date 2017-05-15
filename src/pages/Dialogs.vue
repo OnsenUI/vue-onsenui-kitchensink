@@ -33,6 +33,22 @@
           Prompt
         </div>
       </v-ons-list-item>
+      <v-ons-list-item
+        tappable
+        @click="$ons.notification.toast('Hi there!', { buttonLabel: 'Dismiss', timeout: 1500 })"
+      >
+        <div class="center">
+          Toast
+        </div>
+      </v-ons-list-item>
+      <v-ons-list-item
+        tappable
+        @click="$ons.openActionSheet({ buttons: ['Label 1', 'Label 2', 'Label 3', 'Cancel'], destructive: 2, cancelable: true })"
+      >
+        <div class="center">
+          Action/Bottom Sheet
+        </div>
+      </v-ons-list-item>
 
       <v-ons-list-header>Components</v-ons-list-header>
       <v-ons-list-item tappable
@@ -52,6 +68,14 @@
       </v-ons-list-item>
 
       <v-ons-list-item tappable
+        @click="toastVisible = true"
+      >
+        <div class="center">
+          Toast (top)
+        </div>
+      </v-ons-list-item>
+
+      <v-ons-list-item tappable
         @click="showModal"
       >
         <div class="center">
@@ -66,14 +90,21 @@
           Popover - MD Menu
         </div>
       </v-ons-list-item>
+
+      <v-ons-list-item tappable
+        @click="actionSheetVisible = true"
+      >
+        <div class="center">
+          Action/Bottom Sheet
+        </div>
+      </v-ons-list-item>
     </v-ons-list>
 
     <!-- Components -->
 
     <v-ons-dialog cancelable
       class="lorem-dialog"
-      :visible="dialogVisible"
-      @update="dialogVisible = $event"
+      :visible.sync="dialogVisible"
     >
       <!-- Optional page. This could contain a Navigator as well. -->
       <v-ons-page>
@@ -87,7 +118,7 @@
       </v-ons-page>
     </v-ons-dialog>
 
-    <v-ons-alert-dialog
+    <v-ons-alert-dialog cancelable
       :modifier="$ons.platform.isAndroid() ? '' : 'rowfooter'"
       :title="'Hey!!'"
       :footer="{
@@ -95,11 +126,12 @@
         'Hmm': () => alertDialogVisible = false,
         'Sure': () => alertDialogVisible = false
       }"
-      :visible="alertDialogVisible"
-      @update="alertDialogVisible = $event"
+      :visible.sync="alertDialogVisible"
     >
       Lorem ipsum <v-ons-icon icon="fa-commenting-o"></v-ons-icon>
     </v-ons-alert-dialog>
+
+    <v-ons-toast :visible="toastVisible" animation="fall">Supercalifragilisticexpialidocious<button @click="toastVisible = false">No way</button></v-ons-toast>
 
     <v-ons-modal
       :visible="modalVisible"
@@ -114,8 +146,7 @@
 
     <v-ons-popover cancelable direction="down" cover-target
       target="#info-button"
-      :visible="popoverVisible"
-      @update="popoverVisible = $event"
+      :visible.sync="popoverVisible"
     >
       <v-ons-list>
         <v-ons-list-item tappable
@@ -128,6 +159,13 @@
         </v-ons-list-item>
       </v-ons-list>
     </v-ons-popover>
+
+    <v-ons-action-sheet :visible.sync="actionSheetVisible" cancelable>
+      <v-ons-action-sheet-button @click="actionSheetVisible = false" icon="md-square-o">Action 1</v-ons-action-sheet-button>
+      <v-ons-action-sheet-button @click="actionSheetVisible = false" icon="md-square-o">Action 2</v-ons-action-sheet-button>
+      <v-ons-action-sheet-button @click="actionSheetVisible = false" modifier="destructive" icon="md-square-o">Action 3</v-ons-action-sheet-button>
+      <v-ons-action-sheet-button @click="actionSheetVisible = false" icon="md-square-o">Cancel</v-ons-action-sheet-button>
+    </v-ons-action-sheet>
   </v-ons-page>
 </template>
 
@@ -137,8 +175,10 @@ export default {
     return {
       dialogVisible: false,
       alertDialogVisible: false,
+      toastVisible: false,
       modalVisible: false,
       popoverVisible: false,
+      actionSheetVisible: false,
       timeoutID: 0
     };
   },
