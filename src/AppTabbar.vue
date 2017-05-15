@@ -1,10 +1,10 @@
 <template>
   <v-ons-page>
     <custom-toolbar>
-      <v-ons-toolbar-button slot="left" @click="toggleMenu()">
+      {{ title }}
+      <v-ons-toolbar-button slot="right" @click="toggleMenu()">
         <v-ons-icon icon="ion-navicon, material:md-menu"></v-ons-icon>
       </v-ons-toolbar-button>
-      {{ title }}
     </custom-toolbar>
 
     <v-ons-tabbar position="auto"
