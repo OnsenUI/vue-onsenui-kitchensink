@@ -9,8 +9,7 @@
 
     <v-ons-tabbar position="auto"
       :tabs="tabs"
-      :index="index"
-      @update="index = $event"
+      :index.sync="index"
     >
 
       <template slot="pages">
@@ -46,7 +45,7 @@ export default {
           page: Forms
         },
         {
-          label: 'Animations',
+          label: 'Anim.',
           icon: this.md() ? null : 'ion-film-marker',
           page: Animations
         }

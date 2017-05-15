@@ -2,8 +2,7 @@
   <v-ons-page>
     <v-ons-splitter>
       <v-ons-splitter-side swipeable collapse="" width="300px"
-        :open="isOpen"
-        @update="isOpen = $event"
+        :open.sync="isOpen"
       >
         <menu-page :set-index="setIndex" :toggle-menu="toggleMenu"></menu-page>
       </v-ons-splitter-side>
