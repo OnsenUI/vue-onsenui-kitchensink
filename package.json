@@ -10,9 +10,9 @@
     "deploy": "ghpages -p dist"
   },
   "dependencies": {
-    "onsenui": "^2.2.4",
+    "onsenui": "^2.4.1",
     "vue": "^2.3.3",
-    "vue-onsenui": "^2.0.0-beta.2",
+    "vue-onsenui": "^2.0.0-rc.0",
     "vuex": "^2.3.1"
   },
   "devDependencies": {
