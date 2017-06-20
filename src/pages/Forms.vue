@@ -10,7 +10,7 @@
         <label class="center">
           <v-ons-input float maxlength="20"
             placeholder="Name"
-            v-ons-model="name"
+            v-model="name"
           >
           </v-ons-input>
         </label>
@@ -20,11 +20,11 @@
           <v-ons-icon icon="fa-question-circle-o" class="list-item__icon"></v-ons-icon>
         </div>
         <label class="center">
-          <v-ons-input type="search" maxlength="20"
+          <v-ons-search-input maxlength="20"
             placeholder="Search"
-            v-ons-model="name"
+            v-model="name"
           >
-          </v-ons-input>
+          </v-ons-search-input>
         </label>
       </v-ons-list-item>
       <v-ons-list-item>
@@ -39,7 +39,7 @@
           Switch ({{ switchOn ? 'on' : 'off' }})
         </label>
         <div class="right">
-          <v-ons-switch input-id="switch1" v-ons-model="switchOn">
+          <v-ons-switch input-id="switch1" v-model="switchOn">
           </v-ons-switch>
         </div>
       </ons-list-item>
@@ -56,7 +56,7 @@
       <v-ons-list-header>Select</v-ons-list-header>
       <ons-list-item>
         <div class="center">
-          <v-ons-select style="width: 120px" v-ons-model="selectedItem">
+          <v-ons-select style="width: 120px" v-model="selectedItem">
             <option v-for="item in items" :value="item.value">
               {{ item.text }}
             </option>
@@ -74,12 +74,12 @@
         :modifier="($index === vegetables.length - 1) ? 'longdivider' : ''"
       >
         <label class="left">
-          <v-ons-input type="radio"
+          <v-ons-radio
             :input-id="'radio-' + $index"
             :value="vegetable"
-            v-ons-model=" selectedVegetable"
+            v-model=" selectedVegetable"
           >
-          </v-ons-input>
+          </v-ons-radio>
         </label>
         <label :for="'radio-' + $index" class="center">
           {{ vegetable }}
@@ -94,12 +94,12 @@
       <v-ons-list-header>Checkboxes - {{checkedColors}}</v-ons-list-header>
       <v-ons-list-item v-for="(color, $index) in colors" :key="color" tappable>
         <label class="left">
-          <v-ons-input type="checkbox"
+          <v-ons-checkbox
             :input-id="'checkbox-' + $index"
             :value="color"
-            v-ons-model="checkedColors"
+            v-model="checkedColors"
           >
-          </v-ons-input>
+          </v-ons-checkbox>
         </label>
         <label class="center" :for="'checkbox-' + $index">
           {{ color }}
@@ -115,14 +115,14 @@
           </v-ons-col>
           <v-ons-col>
 
-            <v-ons-range v-ons-model.number="volume" style="width: 100%;"></v-ons-range>
+            <v-ons-range v-model="volume" style="width: 100%;"></v-ons-range>
 
           </v-ons-col>
           <v-ons-col width="40px" style="text-align: center; line-height: 31px;">
             <v-ons-icon icon="md-volume-up"></v-ons-icon>
           </v-ons-col>
         </v-ons-row>
-        Volume: {{ volume }} <span v-show="volume > 80">&nbsp;(careful, that's loud)</span>
+        Volume: {{ volume }} <span v-show="Number(volume) > 80">&nbsp;(careful, that's loud)</span>
       </v-ons-list-item>
     </v-ons-list>
   </v-ons-page>
