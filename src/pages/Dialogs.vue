@@ -7,6 +7,10 @@
       </v-ons-toolbar-button>
     </custom-toolbar>
 
+    <v-ons-fab v-if="$ons.platform.isAndroid()" position="bottom right">
+      <v-ons-icon icon="md-face"></v-ons-icon>
+    </v-ons-fab>
+
     <v-ons-list-title>Notifications</v-ons-list-title>
     <v-ons-list modifier="inset">
       <v-ons-list-item
