@@ -7,7 +7,7 @@ import AppNavigator from './AppNavigator.vue';
 // Onsen UI basic CSS
 import 'onsenui/css/onsenui.css';
 // Onsen UI CSS components source (requires cssnext)
-import 'onsenui/css-components-src/src/onsen-css-components.css';
+import 'onsenui/css/onsen-css-components.css';
 
 Vue.use(Vuex);
 Vue.use(VueOnsen);
