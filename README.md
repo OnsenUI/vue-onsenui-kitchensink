@@ -1,10 +1,10 @@
 # Vue Onsen UI Kitchen Sink
 
-This is a sample app featuring **Onsen UI 2 + Vue 2 + Webpack 2**. This version uses **Vuex** to share the state among components.
+This is a sample app featuring **Onsen UI 2 + Vue**. This version uses **Vuex** to share the state among components.
 
-> A version **without Vuex** is provided in [`no-vuex` branch](https://github.com/frandiox/vue-onsenui-kitchensink/tree/no-vuex).
+> A version **without Vuex** is provided in [`no-vuex` branch](https://github.com/onsenui/vue-onsenui-kitchensink/tree/no-vuex).
 
-**Check out the [preview here](https://frandiox.github.io/vue-onsenui-kitchensink/)**.
+**Check out the [preview here](https://onsenui.github.io/vue-onsenui-kitchensink/)**.
 
 This project has been created with [vue-cli](https://github.com/vuejs/vue-cli) and [webpack-simple](https://github.com/vuejs-templates/webpack-simple) template. Webpack configuration has been modified to work with Onsen UI +2.2.0.
 
