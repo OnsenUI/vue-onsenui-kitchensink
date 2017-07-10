@@ -37,7 +37,7 @@ export default {
       },
       mutations: {
         toggle(state, shouldOpen) {
-          if (shouldOpen instanceof Boolean) {
+          if (typeof shouldOpen == 'boolean') {
             state.open = shouldOpen;
           } else {
             state.open = !state.open;
