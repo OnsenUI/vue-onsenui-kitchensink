@@ -1,5 +1,5 @@
 <template>
-  <v-ons-page @show="resetOptions">
+  <v-ons-page>
     <v-ons-list>
       <v-ons-list-header>Transitions</v-ons-list-header>
       <v-ons-list-item v-for="animation in animations" :key="animation"
@@ -37,7 +37,11 @@ export default {
 
   methods: {
     transition(name) {
-      this.setOptions({ animation: name });
+      this.setOptions({
+        animation: name,
+        callback: () => this.setOptions({})
+      });
+
       this.pageStack.push({
         extends: transitionPage,
         data() {
@@ -46,9 +50,6 @@ export default {
           }
         }
       });
-    },
-    resetOptions() {
-      this.setOptions({});
     }
   }
 };
