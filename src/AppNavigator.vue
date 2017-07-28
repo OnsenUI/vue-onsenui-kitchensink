@@ -1,5 +1,5 @@
 <template>
-  <v-ons-navigator
+  <v-ons-navigator swipeable
     :page-stack="pageStack"
     :pop-page="storePop"
     :options="options"
