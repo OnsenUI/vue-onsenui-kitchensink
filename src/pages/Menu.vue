@@ -67,7 +67,7 @@ export default {
         {
           title: 'Code',
           icon: 'ion-code',
-          url: 'https://github.com/frandiox/vue-onsenui-kitchensink'
+          url: 'https://github.com/OnsenUI/vue-onsenui-kitchensink'
         },
         {
           title: 'Forum',
