@@ -10,16 +10,7 @@
     <v-ons-tabbar position="auto"
       :tabs="tabs"
       :index.sync="index"
-    >
-
-      <template slot="pages">
-        <component v-for="tab in tabs" :is="tab.page" :key="tab.label"
-          :page-stack="pageStack"
-          :set-options="setOptions"
-        ></component>
-      </template>
-
-    </v-ons-tabbar>
+    ></v-ons-tabbar>
   </v-ons-page>
 </template>
 
@@ -37,7 +28,8 @@ export default {
         {
           label: 'Home',
           icon: this.md() ? null : 'ion-home',
-          page: Home
+          page: Home,
+          props: { pageStack: this.pageStack }
         },
         {
           label: 'Forms',
@@ -47,7 +39,11 @@ export default {
         {
           label: 'Anim',
           icon: this.md() ? null : 'ion-film-marker',
-          page: Animations
+          page: Animations,
+          props: {
+            pageStack: this.pageStack,
+            setOptions: this.setOptions
+          }
         }
       ]
     };
