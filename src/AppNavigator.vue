@@ -1,5 +1,5 @@
 <template>
-  <v-ons-navigator id="app" :page-stack="pageStack" :options="options">
+  <v-ons-navigator id="app" swipeable :page-stack="pageStack" :options="options">
     <component v-for="page in pageStack" :is="page" :key="page"
       :page-stack="pageStack"
       :set-options="setOptions"
