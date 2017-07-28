@@ -13,7 +13,7 @@
     >
 
       <template slot="pages">
-        <component v-for="tab in tabs" :is="tab.page" :key="tab.page"
+        <component v-for="tab in tabs" :is="tab.page" :key="tab.label"
           :page-stack="pageStack"
           :set-options="setOptions"
         ></component>
