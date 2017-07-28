@@ -20,7 +20,7 @@
 
     <v-ons-list>
       <v-ons-list-header>Pull to refresh</v-ons-list-header>
-      <v-ons-list-item v-for="kitten in kittens" :key="kitten">
+      <v-ons-list-item v-for="(kitten, index) in kittens" :key="kitten.name + index">
         <div class="left">
           <img class="list-item__thumbnail" :src="kitten.url">
         </div>
