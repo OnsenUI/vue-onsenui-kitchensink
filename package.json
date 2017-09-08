@@ -5,16 +5,16 @@
   "author": "Fran Dios <me@frandiox.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --host 0.0.0.0",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --host 0.0.0.0 --port 7000",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "demo:index": "mv dist/index.html dist/main.html && sed -i 's/index\\.html/main\\.html/' dist/demo.html && mv dist/demo.html dist/index.html",
     "deploy": "npm run demo:index && ghpages -p dist"
   },
   "dependencies": {
-    "onsenui": "^2.5.1",
+    "onsenui": "2.6.x",
     "vue": "^2.4.2",
-    "vue-onsenui": "^2.1.0",
-    "vuex": "^2.3.1"
+    "vue-onsenui": "2.2.x",
+    "vuex": "^2.4.0"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
@@ -34,7 +34,7 @@
     "style-loader": "^0.14.0",
     "vue-loader": "^12.0.4",
     "vue-template-compiler": "^2.4.2",
-    "webpack": "^2.2.0",
-    "webpack-dev-server": "^2.2.0"
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "2.7.1"
   }
 }
