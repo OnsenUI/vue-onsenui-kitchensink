@@ -20,23 +20,22 @@
       <v-ons-button modifier="large" class="button-margin" disabled>Large</v-ons-button>
     </section>
 
-    <v-ons-fab position="top right" :style="spdStyle">
+    <v-ons-fab position="top right">
       <v-ons-icon icon="md-face"></v-ons-icon>
     </v-ons-fab>
 
-    <v-ons-fab position="bottom left" :style="spdStyle" disabled>
+    <v-ons-fab position="bottom left">
       <v-ons-icon icon="md-car"></v-ons-icon>
     </v-ons-fab>
 
     <v-ons-speed-dial position="bottom right" direction="up"
       :open.sync="spdOpen"
     >
-      <v-ons-fab :style="spdStyle">
+      <v-ons-fab>
         <v-ons-icon icon="md-share"></v-ons-icon>
       </v-ons-fab>
 
       <v-ons-speed-dial-item v-for="(icon, name) in shareItems" :key="name"
-        :style="spdStyle"
         @click="$ons.notification.confirm(`Share on ${name}?`)"
       >
         <v-ons-icon :icon="icon"></v-ons-icon>
@@ -51,9 +50,6 @@ export default {
   data() {
     return {
       spdOpen: false,
-      spdStyle: {
-        backgroundColor: this.$ons.platform.isAndroid() ? null : '#4282cc'
-      },
       shareItems: {
         'Twitter': 'md-twitter',
         'Facebook': 'md-facebook',

@@ -8,7 +8,9 @@
     </custom-toolbar>
 
     <v-ons-tabbar
+      swipeable
       position="auto"
+      modifier="autogrow"
       :tabs="tabs"
       :index.sync="index"
     ></v-ons-tabbar>
@@ -16,6 +18,7 @@
 </template>
 
 <script>
+import Camera from './pages/Camera.vue';
 import Home from './pages/Home.vue';
 import Forms from './pages/Forms.vue';
 import Animations from './pages/Animations.vue';
@@ -24,6 +27,12 @@ export default {
   data () {
     return {
       tabs: [
+        {
+          title: 'Camera',
+          icon: 'md-camera',
+          page: Camera,
+          style: 'max-width: 60px'
+        },
         {
           label: 'Home',
           icon: this.md() ? null : 'ion-home',
@@ -57,7 +66,7 @@ export default {
       }
     },
     title() {
-      return this.md() ? 'Kitchen Sink' : this.tabs[this.index].label;
+      return this.md() ? 'Onsen UI' : this.tabs[this.index].title || this.tabs[this.index].label;
     }
   }
 };

@@ -2,7 +2,7 @@
   <v-ons-page>
     <custom-toolbar v-bind="toolbarInfo"></custom-toolbar>
 
-    <v-ons-tabbar position="auto">
+    <v-ons-tabbar position="auto" swipeable>
       <template slot="pages">
 
         <!-- Load more items on scroll bottom -->
