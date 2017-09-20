@@ -27,8 +27,8 @@ import Animations from './pages/Animations.vue';
 // Just a linear interpolation formula
 const lerp = (x0, x1, t) => parseInt((1 - t) * x0 + t * x1, 10);
 // RGB colors
-const red = [231, 55, 47];
-const green = [0, 150, 136];
+const red = [244, 67, 54];
+const blue = [61, 90, 254];
 const purple = [103, 58, 183];
 
 export default {
@@ -56,7 +56,7 @@ export default {
           label: 'Forms',
           icon: this.md() ? null : 'ion-edit',
           page: Forms,
-          theme: green
+          theme: blue
         },
         {
           label: 'Anim',
