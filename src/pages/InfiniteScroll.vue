@@ -92,12 +92,6 @@ export default {
 </script>
 
 <style scoped>
-.intro {
-  text-align: center;
-  padding: 0 20px;
-  margin-top: 40px;
-}
-
 .after-list {
   margin: 20px;
   text-align: center;

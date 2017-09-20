@@ -1,5 +1,5 @@
 <template>
-  <v-ons-page>
+  <v-ons-page modifier="white">
     <div class="profile-pic">
       <img src="../assets/vue-onsenui.png">
     </div>
@@ -7,6 +7,7 @@
     <v-ons-list-title>Access</v-ons-list-title>
     <v-ons-list>
       <v-ons-list-item v-for="(item, index) in access" :key="item.title"
+        :modifier="md && 'nodivider'"
         @click="loadView(index)"
       >
         <div class="left">
@@ -21,9 +22,10 @@
       </v-ons-list-item>
     </v-ons-list>
 
-    <v-ons-list-title style="margin-top: 10px">Links</v-ons-list-title>
+    <v-ons-list-title>Links</v-ons-list-title>
     <v-ons-list>
       <v-ons-list-item v-for="item in links" :key="item.title"
+        :modifier="md && 'nodivider'"
         @click="loadLink(item.url)"
       >
         <div class="left">
@@ -95,25 +97,36 @@ export default {
         }
       ]
     };
+  },
+
+  computed: {
+    md() {
+      return this.$ons.platform.isAndroid();
+    }
   }
 };
 </script>
 
 <style scoped>
 .profile-pic {
-  width: 200px;
+  width: 100%;
   background-color: #fff;
-  margin: 20px auto 10px;
-  border: 1px solid #999;
-  border-radius: 4px;
+  border-bottom: 1px solid #DDD;
+  color: rgba(0, 0, 0, .56);
+  padding-bottom: 8px;
+}
+.page--material .profile-pic {
+  background-color: #f6f6f6;
 }
 
 .profile-pic > img {
   display: block;
   max-width: 100%;
 }
+</style>
 
-ons-list-item {
-  color: #444;
+<style>
+.page--material__background.page--white__background {
+  background-color: #fff;
 }
 </style>

@@ -4,12 +4,12 @@
       This is a kitchen sink example that shows off the Vue bindings for Onsen UI.<br><br>
     </p>
 
-      <v-ons-card v-for="page of pages" :key="page.label"
-        @click="push(page.component, page.label)"
-      >
-        <div class="title">{{ page.label }}</div>
-        <div class="content">{{ page.desc }}</div>
-      </v-ons-card>
+    <v-ons-card v-for="page of pages" :key="page.label"
+      @click="push(page.component, page.label)"
+    >
+      <div class="title">{{ page.label }}</div>
+      <div class="content">{{ page.desc }}</div>
+    </v-ons-card>
   </v-ons-page>
 </template>
 
@@ -77,11 +77,14 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .intro {
-  text-align: center;
-  padding: 0 20px;
-  margin-top: 40px;
+  text-align: left;
+  padding: 0 22px;
+  margin-top: 20px;
+  font-size: 14px;
+  line-height: 1.4;
+  color: rgba(0, 0, 0, .54);
 }
 
 ons-card {
