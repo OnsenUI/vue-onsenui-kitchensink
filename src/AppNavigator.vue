@@ -3,6 +3,7 @@
     :page-stack="pageStack"
     :pop-page="storePop"
     :options="options"
+    @postpush="showPopTip"
   ></v-ons-navigator>
 </template>
 
@@ -12,6 +13,11 @@ import AppSplitter from './AppSplitter.vue';
 export default {
   beforeCreate() {
     this.$store.commit('navigator/push', AppSplitter);
+  },
+  data() {
+    return {
+      shutUp: this.$ons.platform.isAndroid()
+    }
   },
   computed: {
     pageStack() {
@@ -24,6 +30,13 @@ export default {
   methods: {
     storePop() {
       this.$store.commit('navigator/pop');
+    },
+    showPopTip() {
+      !this.shutUp && this.$ons.notification.toast({
+        message: 'Try swipe-to-pop from left side!',
+        buttonLabel: 'Shut up!',
+        timeout: 2000
+      }).then(i => this.shutUp = i === 0);
     }
   }
 };
