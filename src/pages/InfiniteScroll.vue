@@ -1,8 +1,16 @@
 <template>
   <v-ons-page>
-    <custom-toolbar v-bind="toolbarInfo"></custom-toolbar>
+    <custom-toolbar v-bind="toolbarInfo">
+      <v-ons-segment v-if="!$ons.platform.isAndroid()"
+        tabbar-id="infinite-scroll-tabbar"
+        style="width: 260px"
+      >
+        <button>Load More</button>
+        <button>Lazy Repeat</button>
+      </v-ons-segment>
+    </custom-toolbar>
 
-    <v-ons-tabbar position="auto" swipeable>
+    <v-ons-tabbar id="infinite-scroll-tabbar" position="auto" swipeable>
       <template slot="pages">
 
         <!-- Load more items on scroll bottom -->
