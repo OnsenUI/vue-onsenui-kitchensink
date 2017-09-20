@@ -33,6 +33,25 @@
         </div>
       </v-ons-list-item>
 
+      <v-ons-list-header>Range slider</v-ons-list-header>
+      <v-ons-list-item>
+        Adjust the volume:
+        <v-ons-row>
+          <v-ons-col width="40px" style="text-align: center; line-height: 31px;">
+            <v-ons-icon icon="md-volume-down"></v-ons-icon>
+          </v-ons-col>
+          <v-ons-col>
+
+            <v-ons-range v-model="volume" style="width: 100%;"></v-ons-range>
+
+          </v-ons-col>
+          <v-ons-col width="40px" style="text-align: center; line-height: 31px;">
+            <v-ons-icon icon="md-volume-up"></v-ons-icon>
+          </v-ons-col>
+        </v-ons-row>
+        Volume: {{ volume }} <span v-show="Number(volume) > 80">&nbsp;(careful, that's loud)</span>
+      </v-ons-list-item>
+
       <v-ons-list-header>Switches</v-ons-list-header>
       <ons-list-item>
         <label class="center" for="switch1">
@@ -104,25 +123,6 @@
         <label class="center" :for="'checkbox-' + $index">
           {{ color }}
         </label>
-      </v-ons-list-item>
-
-      <v-ons-list-header>Range slider</v-ons-list-header>
-      <v-ons-list-item>
-        Adjust the volume:
-        <v-ons-row>
-          <v-ons-col width="40px" style="text-align: center; line-height: 31px;">
-            <v-ons-icon icon="md-volume-down"></v-ons-icon>
-          </v-ons-col>
-          <v-ons-col>
-
-            <v-ons-range v-model="volume" style="width: 100%;"></v-ons-range>
-
-          </v-ons-col>
-          <v-ons-col width="40px" style="text-align: center; line-height: 31px;">
-            <v-ons-icon icon="md-volume-up"></v-ons-icon>
-          </v-ons-col>
-        </v-ons-row>
-        Volume: {{ volume }} <span v-show="Number(volume) > 80">&nbsp;(careful, that's loud)</span>
       </v-ons-list-item>
     </v-ons-list>
   </v-ons-page>
