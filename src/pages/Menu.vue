@@ -44,7 +44,7 @@
 export default {
   methods: {
     loadView(index) {
-      this.$store.commit('tabbar/set', index);
+      this.$store.commit('tabbar/set', index + 1);
       this.$store.commit('splitter/toggle');
     },
     loadLink(url) {
