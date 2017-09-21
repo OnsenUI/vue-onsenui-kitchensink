@@ -2,7 +2,9 @@
   <v-ons-page :style="swipePosition">
     <custom-toolbar :style="swipeTheme">
       {{ title }}
-      <v-ons-toolbar-button slot="right" @click="$store.commit('splitter/toggle')">
+      <v-ons-toolbar-button slot="right"
+        @click="$store.commit('splitter/toggle'); showTip(null, 'Try dragging from right edge!')"
+      >
         <v-ons-icon icon="ion-navicon, material:md-menu"></v-ons-icon>
       </v-ons-toolbar-button>
     </custom-toolbar>
@@ -14,6 +16,7 @@
       :tabbar-style="swipeTheme"
       :tabs="tabs"
       :index.sync="index"
+      @postchange="showTip($event, 'Tip: Try swiping pages!')"
     ></v-ons-tabbar>
   </v-ons-page>
 </template>
@@ -34,6 +37,8 @@ const purple = [103, 58, 183];
 export default {
   data () {
     return {
+      shutUp: !this.md(),
+      showingTip: false,
       colors: red,
       animationOptions: {},
       topPosition: 0,
@@ -81,6 +86,19 @@ export default {
       this.colors = this.colors.map((c, i) => lerp(this.tabs[a].theme[i], this.tabs[b].theme[i], ratio));
       this.topPosition = lerp(this.tabs[a].top || 0, this.tabs[b].top || 0, ratio);
     },
+    showTip(e, message) {
+      if (!this.shutUp && !(e && e.swipe) && !this.showingTip) {
+        this.showingTip = true;
+        this.$ons.notification.toast({
+          message,
+          buttonLabel: 'Shut up!',
+          timeout: 2000
+        }).then(i => {
+          this.shutUp = i === 0;
+          this.showingTip = false;
+        });
+      }
+    }
   },
 
   computed: {
