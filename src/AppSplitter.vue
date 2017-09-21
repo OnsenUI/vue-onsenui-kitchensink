@@ -1,7 +1,10 @@
 <template>
   <v-ons-page>
     <v-ons-splitter>
-      <v-ons-splitter-side swipeable side="right" collapse="" width="260px" :animation="$ons.platform.isAndroid() ? 'overlay' : 'reveal'"
+      <v-ons-splitter-side swipeable side="right" collapse=""
+        width="260px"
+        :swipe-target-width="$ons.platform.isAndroid() && 25"
+        :animation="$ons.platform.isAndroid() ? 'overlay' : 'reveal'"
         :open.sync="isOpen"
       >
         <menu-page></menu-page>
