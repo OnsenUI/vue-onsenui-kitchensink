@@ -1,15 +1,15 @@
 <template>
   <v-ons-page :style="swipePosition">
-    <custom-toolbar :style="swipeTheme">
+    <custom-toolbar :style="swipeTheme" modifier="white-content">
       {{ title }}
-      <v-ons-toolbar-button slot="right"
+      <v-ons-toolbar-button slot="right" modifier="white-content"
         @click="$store.commit('splitter/toggle'); showTip(null, 'Try dragging from right edge!')"
       >
         <v-ons-icon icon="ion-navicon, material:md-menu"></v-ons-icon>
       </v-ons-toolbar-button>
     </custom-toolbar>
 
-    <v-ons-tabbar position="auto" modifier="autogrow"
+    <v-ons-tabbar position="auto" modifier="autogrow white-content"
       :swipeable="md()"
       :on-swipe="md() ? onSwipe : null"
       :animation="!md() && 'none'"
@@ -128,3 +128,21 @@ export default {
   }
 };
 </script>
+
+<style>
+/* Custom 'white-content' modifier */
+
+.page--material .toolbar--white-content__center,
+.page--material .toolbar-button--white-content,
+.page--material :checked + .tabbar--white-content__button {
+  color: white;
+}
+
+.page--material .tabbar--white-content__button {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.page--material .tabbar--white-content__border {
+  background-color: white;
+}
+</style>
