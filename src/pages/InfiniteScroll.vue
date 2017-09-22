@@ -10,7 +10,7 @@
       </v-ons-segment>
     </custom-toolbar>
 
-    <v-ons-tabbar id="infinite-scroll-tabbar" position="auto" swipeable>
+    <v-ons-tabbar id="infinite-scroll-tabbar" position="auto">
       <template slot="pages">
 
         <!-- Load more items on scroll bottom -->
