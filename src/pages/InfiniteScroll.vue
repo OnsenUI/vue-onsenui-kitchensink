@@ -1,7 +1,7 @@
 <template>
   <v-ons-page>
     <custom-toolbar v-bind="toolbarInfo">
-      <v-ons-segment v-if="!$ons.platform.isAndroid()"
+      <v-ons-segment v-if="!md"
         tabbar-id="infinite-scroll-tabbar"
         style="width: 260px"
       >

@@ -3,7 +3,7 @@
 
     <v-ons-list>
       <v-ons-list-header>Text input</v-ons-list-header>
-      <v-ons-list-item :modifier="$ons.platform.isAndroid() ? 'nodivider' : ''">
+      <v-ons-list-item :modifier="md ? 'nodivider' : ''">
         <div class="left">
           <v-ons-icon icon="md-face" class="list-item__icon"></v-ons-icon>
         </div>
@@ -15,7 +15,7 @@
           </v-ons-input>
         </label>
       </v-ons-list-item>
-      <v-ons-list-item :modifier="$ons.platform.isAndroid() ? 'nodivider' : ''">
+      <v-ons-list-item :modifier="md ? 'nodivider' : ''">
         <div class="left">
           <v-ons-icon icon="fa-question-circle-o" class="list-item__icon"></v-ons-icon>
         </div>

@@ -2,12 +2,12 @@
   <v-ons-page>
     <custom-toolbar v-bind="toolbarInfo">
       <v-ons-toolbar-button slot="right" id="info-button" @click="popoverVisible = true">
-        <v-ons-icon v-if="$ons.platform.isAndroid()" icon="md-more-vert"></v-ons-icon>
+        <v-ons-icon v-if="md" icon="md-more-vert"></v-ons-icon>
         <span v-else>More</span>
       </v-ons-toolbar-button>
     </custom-toolbar>
 
-    <v-ons-fab v-if="$ons.platform.isAndroid()" position="bottom right">
+    <v-ons-fab v-if="md" position="bottom right">
       <v-ons-icon icon="md-face"></v-ons-icon>
     </v-ons-fab>
 
@@ -125,7 +125,7 @@
     </v-ons-dialog>
 
     <v-ons-alert-dialog cancelable
-      :modifier="$ons.platform.isAndroid() ? '' : 'rowfooter'"
+      :modifier="md ? '' : 'rowfooter'"
       :title="'Hey!!'"
       :footer="{
         'Wat': () => alertDialogVisible = false,
@@ -159,7 +159,7 @@
           v-for="label in ['Call history', 'Import/export', 'New contact', 'Settings']"
           @click="popoverVisible = false"
           :key="label"
-          :modifier="$ons.platform.isAndroid() ? 'nodivider' : 'longdivider'"
+          :modifier="md ? 'nodivider' : 'longdivider'"
         >
           <div class="center">{{ label }}</div>
         </v-ons-list-item>

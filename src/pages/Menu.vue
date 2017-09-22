@@ -97,12 +97,6 @@ export default {
         }
       ]
     };
-  },
-
-  computed: {
-    md() {
-      return this.$ons.platform.isAndroid();
-    }
   }
 };
 </script>

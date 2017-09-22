@@ -16,7 +16,7 @@ export default {
   },
   data() {
     return {
-      shutUp: this.$ons.platform.isAndroid()
+      shutUp: this.md
     }
   },
   computed: {

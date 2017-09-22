@@ -10,9 +10,9 @@
     </custom-toolbar>
 
     <v-ons-tabbar position="auto" modifier="autogrow white-content"
-      :swipeable="md()"
-      :on-swipe="md() ? onSwipe : null"
-      :animation="!md() && 'none'"
+      :swipeable="md"
+      :on-swipe="md ? onSwipe : null"
+      :animation="!md && 'none'"
       :tabbar-style="swipeTheme"
       :tabs="tabs"
       :index.sync="index"
@@ -37,7 +37,7 @@ const purple = [103, 58, 183];
 export default {
   data () {
     return {
-      shutUp: !this.md(),
+      shutUp: !this.md,
       showingTip: false,
       colors: red,
       animationOptions: {},
@@ -53,19 +53,19 @@ export default {
         },
         {
           label: 'Home',
-          icon: this.md() ? null : 'ion-home',
+          icon: this.md ? null : 'ion-home',
           page: Home,
           theme: red
         },
         {
           label: 'Forms',
-          icon: this.md() ? null : 'ion-edit',
+          icon: this.md ? null : 'ion-edit',
           page: Forms,
           theme: blue
         },
         {
           label: 'Anim',
-          icon: this.md() ? null : 'ion-film-marker',
+          icon: this.md ? null : 'ion-film-marker',
           page: Animations,
           theme: purple
         }
@@ -74,9 +74,6 @@ export default {
   },
 
   methods: {
-    md() {
-      return this.$ons.platform.isAndroid();
-    },
     onSwipe(index, animationOptions) {
       // Apply the same transition as ons-tabbar
       this.animationOptions = animationOptions;
@@ -111,16 +108,16 @@ export default {
       }
     },
     title() {
-      return this.md() ? 'Onsen UI' : this.tabs[this.index].title || this.tabs[this.index].label;
+      return this.md ? 'Onsen UI' : this.tabs[this.index].title || this.tabs[this.index].label;
     },
     swipeTheme() {
-      return this.md() && {
+      return this.md && {
         backgroundColor: `rgb(${this.colors.join(',')})`,
         transition: `all ${this.animationOptions.duration || 0}s ${this.animationOptions.timing || ''}`
       }
     },
     swipePosition() {
-      return this.md() && {
+      return this.md && {
         top: this.topPosition + 'px',
         transition: `all ${this.animationOptions.duration || 0}s ${this.animationOptions.timing || ''}`
       }
