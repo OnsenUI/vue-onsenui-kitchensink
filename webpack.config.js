@@ -47,9 +47,16 @@ module.exports = {
               loader: 'postcss-loader',
               options: {
                 plugins: [
-                  require('postcss-smart-import'),
-                  require('postcss-url'),
-                  // require('postcss-cssnext')
+                  require('postcss-smart-import')(),
+                  require('postcss-url')(),
+                  require('postcss-base64')({
+                    extensions: ['.svg'],
+                    root: 'src'
+                  }),
+                  require('postcss-cssnext')({
+                    browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
+                    features: { autoprefixer: { remove: false } } // 'background-image: radial-gradient' broken in autoprefixer
+                  })
                 ]
               }
             }
@@ -69,7 +76,11 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      'vue$': 'vue/dist/vue.esm.js'
+      'vue$': 'vue/dist/vue.esm.js',
+      //// For development:
+      // 'vue-onsenui$': path.join(__dirname, '..', 'OnsenUI', 'bindings', 'vue', 'dist', 'vue-onsenui'),
+      // 'onsenui$': path.join(__dirname, '..', 'OnsenUI', 'build', 'js', 'onsenui'),
+      // 'onsenui': path.join(__dirname, '..', 'OnsenUI', 'build'),
     }
   },
   devServer: {
