@@ -10,9 +10,8 @@
     </custom-toolbar>
 
     <v-ons-tabbar position="auto" modifier="autogrow white-content"
-      :swipeable="md"
+      swipeable
       :on-swipe="md ? onSwipe : null"
-      :animation="!md && 'none'"
       :tabbar-style="swipeTheme"
       :tabs="tabs"
       :index.sync="index"
