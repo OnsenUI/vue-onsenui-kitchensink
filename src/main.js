@@ -4,10 +4,10 @@ import VueOnsen from 'vue-onsenui';
 import CustomToolbar from './partials/CustomToolbar.vue';
 import storeLike from './store.js';
 import AppNavigator from './AppNavigator.vue';
-// Onsen UI basic CSS
-import 'onsenui/css/onsenui.css';
-// Onsen UI CSS components source (requires cssnext)
-import 'onsenui/css/onsen-css-components.css';
+
+import 'onsenui/css/onsenui.css'; // Onsen UI basic CSS
+// import 'onsenui/css/onsen-css-components.css'; // Default Onsen UI CSS components
+import './onsen-css-components.css'; // Onsen UI CSS components source for custom themes (requires cssnext)
 
 Vue.use(Vuex);
 Vue.use(VueOnsen);
