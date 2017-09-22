@@ -3,7 +3,7 @@
     <custom-toolbar v-bind="toolbarInfo">
       <v-ons-segment v-if="!md"
         tabbar-id="infinite-scroll-tabbar"
-        style="width: 260px"
+        style="width: 200px"
       >
         <button>Load More</button>
         <button>Lazy Repeat</button>
