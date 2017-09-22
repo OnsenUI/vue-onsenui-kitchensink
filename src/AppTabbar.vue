@@ -31,7 +31,7 @@ import Animations from './pages/Animations.vue';
 const lerp = (x0, x1, t) => parseInt((1 - t) * x0 + t * x1, 10);
 // RGB colors
 const red = [244, 67, 54];
-const blue = [61, 90, 254];
+const blue = [30, 136, 229];
 const purple = [103, 58, 183];
 
 export default {
