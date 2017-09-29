@@ -28,35 +28,47 @@
         left: 20px;
         top: 20px;
         color: white;
-        z-index: -1;
+      }
+      @media (max-width: 1150px) {
+        .qr {
+          display: none;
+        }
+      }
+      .container {
+        margin: 0 auto;
+        max-width: 900px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .full-view {
+        margin-bottom: 14px;
       }
     </style>
   </head>
   <body style="background: hsl(6, 91%, 62%); -ms-overflow-style: none">
     <a href="./main.html" target="_blank" class="qr">
-      <p>Try it in your device:</p>
-      <img src="demo/img/qrcode.svg" style="width: 150px; display: block; border: 4px solid white; box-sizing: border-box">
+      <p style="text-align: center">Try it in your device:</p>
+      <img src="demo/img/qrcode.png" style="width: 150px; display: block; border-radius: 6px; box-sizing: border-box">
     </a>
     <h1><a href="https://github.com/onsenui/vue-onsenui-kitchensink">Onsen UI for Vue Kitchensink</a></h1>
     <div style="text-align: center;"><a href="https://github.com/onsenui/vue-onsenui-kitchensink">Show Source Code</a></div>
     <div style="text-align: center; margin-top: 25px">
-      <div id="tableContent" style="width: 100%; height: 100%">
-        <table style="width:900px; margin: 0px auto; border-collapse:separate;border-spacing: 0 1em">
-          <tr style="border-spacing: 0 1em">
-            <td>
-              <div onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';" id="iosView" style="display:inline-block; box-sizing: border-box; background-size: contain; width: 350px; height: 705px; padding: 78px 19px 78px 19px; vertical-align: middle; margin-bottom: 30px; margin-right: 15px; background-image: url('demo/img/iphone6plus.png');">
-                <iframe style="width: 100%; height: 100%; border: none" src="index.html?platform=ios" scrolling="no" class="lazy-hidden"></iframe>
-              </div>
-            </td>
-            <td>
-              <div onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';" id="androidView" style="display:inline-block; box-sizing: border-box; background-size: contain; width: 350px; height: 700px; padding: 61px 13px 56px 11px; vertical-align: middle; margin-bottom: 30px; background-image: url('demo/img/nexus6.png');">
-                <iframe style="width: 100%; height: 100%; border: none" src="index.html?platform=android" scrolling="no" class="lazy-hidden"></iframe>
-              </div>
-            </td>
-          </tr>
-        </table>
-        <p><a href="https://onsen.io/vue/">Visit Onsen UI Website</a></p>
+      <div class="container">
+        <div>
+          <div class="full-view"><a href="./main.html?platform=ios">Open in Full View</a></div>
+          <div onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';" id="iosView" style="display:inline-block; box-sizing: border-box; background-size: contain; width: 350px; height: 705px; padding: 78px 19px 78px 19px; vertical-align: middle; margin-bottom: 30px; margin-right: 15px; background-image: url('demo/img/iphone6plus.png');">
+          <iframe style="width: 100%; height: 100%; border: none" src="index.html?platform=ios" scrolling="no" class="lazy-hidden"></iframe>
+        </div>
+        </div>
+        <div>
+          <div class="full-view"><a href="./main.html?platform=android">Open in Full View</a></div>
+          <div onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';" id="androidView" style="display:inline-block; box-sizing: border-box; background-size: contain; width: 350px; height: 700px; padding: 61px 13px 56px 11px; vertical-align: middle; margin-bottom: 30px; background-image: url('demo/img/nexus6.png');">
+          <iframe style="width: 100%; height: 100%; border: none" src="index.html?platform=android" scrolling="no" class="lazy-hidden"></iframe>
+        </div>
+        </div>
       </div>
+      <p style="text-align: center"><a href="https://onsen.io/vue/">Visit Onsen UI Website</a></p>
 	 </div>
   </body>
 </html>
