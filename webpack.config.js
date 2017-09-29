@@ -5,9 +5,10 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
+  watch: process.env.WEBPACK_WATCH === 'true',
   entry: './src/main.js',
   output: {
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './www'),
     publicPath: '',
     filename: 'build.js'
   },
