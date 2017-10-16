@@ -44,7 +44,7 @@ export default {
       tabs: [
         {
           title: 'Camera',
-          icon: 'md-camera',
+          icon: 'ion-camera, material:md-camera',
           page: Camera,
           theme: red,
           style: { maxWidth: '50px' },
