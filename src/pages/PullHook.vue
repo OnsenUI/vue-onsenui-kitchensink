@@ -23,7 +23,6 @@
       <div v-else class="pull-hook-progress">
         <v-ons-progress-circular
           :value="ratio * 100"
-          :secondary-value="100"
           :indeterminate="state === 'action'"
           :style="{ transform: `rotate(${ratio}turn)` }"
         ></v-ons-progress-circular>
@@ -62,7 +61,7 @@ export default {
       setTimeout(() => {
         this.kittens = [...this.kittens, this.getRandomKitten()];
         done();
-      }, 400);
+      }, 1500);
     },
     getRandomName() {
       const names = ['Oscar', 'Max', 'Tiger', 'Sam', 'Misty', 'Simba', 'Coco', 'Chloe', 'Lucy', 'Missy'];
@@ -119,9 +118,5 @@ export default {
 
 .pull-hook-progress .progress-circular__primary {
   transition: stroke-dashoffset 0s;
-}
-
-.pull-hook-progress .progress-circular__secondary {
-  stroke: rgba(84, 139, 167, 0.2);
 }
 </style>
