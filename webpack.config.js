@@ -79,6 +79,7 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       //// For development:
+      // 'vue-onsenui/esm': path.join(__dirname, '..', 'OnsenUI', 'bindings', 'vue', 'esm'),
       // 'vue-onsenui$': path.join(__dirname, '..', 'OnsenUI', 'bindings', 'vue', 'dist', 'vue-onsenui'),
       // 'onsenui$': path.join(__dirname, '..', 'OnsenUI', 'build', 'js', 'onsenui'),
       // 'onsenui': path.join(__dirname, '..', 'OnsenUI', 'build'),

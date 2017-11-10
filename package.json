@@ -12,14 +12,15 @@
     "deploy": "npm run demo:index && ghpages -p www"
   },
   "dependencies": {
-    "onsenui": "2.6.x",
-    "vue": "^2.4.2",
-    "vue-onsenui": "2.2.x",
-    "vuex": "^2.4.0"
+    "onsenui": "^2.7.0",
+    "vue": "^2.5.3",
+    "vue-onsenui": "^2.3.0",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
+    "babel-plugin-external-helpers": "^6.22.0",
     "babel-preset-latest": "^6.0.0",
     "copy-webpack-plugin": "^4.0.1",
     "cross-env": "^3.0.0",
@@ -35,8 +36,8 @@
     "postcss-url": "^7.1.2",
     "style-loader": "^0.18.2",
     "vue-loader": "^12.0.4",
-    "vue-template-compiler": "^2.4.2",
-    "webpack": "^2.6.1",
+    "vue-template-compiler": "^2.5.3",
+    "webpack": "^3.8.1",
     "webpack-dev-server": "2.7.1"
   }
 }

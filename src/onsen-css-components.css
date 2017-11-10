@@ -1,3 +1,7 @@
+/* @import url('../../OnsenUI/build/css-components-src/src/theme.css'); /1* For development *1/ */
 @import url('onsenui/css-components-src/src/theme.css'); /* Original theme */
 @import url('./theme.css'); /* Custom theme */
 @import url('onsenui/css-components-src/src/components/index.css'); /* Original components */
+@import url('onsenui/css-components-src/src/iphonex-support/index.css');
+/* @import url('../../OnsenUI/build/css-components-src/src/components/index.css'); /1* For development *1/ */
+/* @import url('../../OnsenUI/build/css-components-src/src/iphonex-support/index.css'); /1* For development *1/ */
