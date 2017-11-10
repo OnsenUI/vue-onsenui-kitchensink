@@ -25,5 +25,17 @@ new Vue({
   beforeCreate() {
     // Shortcut for Material Design
     Vue.prototype.md = this.$ons.platform.isAndroid();
+
+    // Set iPhoneX flag based on URL
+    if (window.location.search.match(/iphonex/i)) {
+      const iPhoneXOrientationChange = isPortrait => {
+        const flag = 'onsflag-iphonex-';
+        document.documentElement.removeAttribute(flag + (isPortrait ? 'landscape' : 'portrait'));
+        document.documentElement.setAttribute(flag + (isPortrait ? 'portrait' : 'landscape'), '');
+      };
+
+      this.$ons.orientation.on('change', event => iPhoneXOrientationChange(event.isPortrait));
+      iPhoneXOrientationChange(this.$ons.orientation.isPortrait());
+    }
   }
 });
