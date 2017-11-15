@@ -4,6 +4,21 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 
+var browserTargets = [
+  '> 1%',
+  'iOS >= 8.0',
+  'Android >= 4.4',
+  'Chrome >= 30',
+  'Safari >= 9',
+  'Firefox ESR',
+  'Opera 12.1'
+];
+
+var babelOptions = {
+  babelrc: false,
+  presets: [ ['env', { browsers: browserTargets }] ]
+};
+
 module.exports = {
   watch: process.env.WEBPACK_WATCH === 'true',
   entry: './src/main.js',
@@ -19,6 +34,10 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
+            js: {
+              loader: 'babel-loader',
+              options: babelOptions
+            }
           }
           // other vue-loader options go here
         }
@@ -26,7 +45,8 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
+        options: babelOptions
       },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
@@ -50,21 +70,8 @@ module.exports = {
                 plugins: [
                   require('postcss-smart-import')(),
                   require('postcss-url')(),
-                  require('postcss-base64')({
-                    extensions: ['.svg'],
-                    root: 'src'
-                  }),
-                  require('postcss-cssnext')({
-                    browsers: [
-                      '> 1%',
-                      'iOS >= 8.0',
-                      'Android >= 4.4',
-                      'Chrome >= 30',
-                      'Safari >= 9',
-                      'Firefox ESR',
-                      'Opera 12.1'
-                    ],
-                  })
+                  require('postcss-base64')({ extensions: ['.svg'], root: 'src' }),
+                  require('postcss-cssnext')({ browsers: browserTargets })
                 ]
               }
             }
