@@ -55,8 +55,15 @@ module.exports = {
                     root: 'src'
                   }),
                   require('postcss-cssnext')({
-                    browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'],
-                    features: { autoprefixer: { remove: false } } // 'background-image: radial-gradient' broken in autoprefixer
+                    browsers: [
+                      '> 1%',
+                      'iOS >= 8.0',
+                      'Android >= 4.4',
+                      'Chrome >= 30',
+                      'Safari >= 9',
+                      'Firefox ESR',
+                      'Opera 12.1'
+                    ],
                   })
                 ]
               }
