@@ -9,8 +9,9 @@
       </v-ons-toolbar-button>
     </custom-toolbar>
 
-    <v-ons-tabbar position="auto" modifier="autogrow white-content"
+    <v-ons-tabbar position="auto"
       swipeable
+      :modifier="md ? 'autogrow white-content' : null"
       :on-swipe="md ? onSwipe : null"
       :tabbar-style="swipeTheme"
       :tabs="tabs"
@@ -43,11 +44,11 @@ export default {
       topPosition: 0,
       tabs: [
         {
-          title: 'Camera',
+          label: this.md ? null : 'Camera',
           icon: 'ion-camera, material:md-camera',
           page: Camera,
           theme: red,
-          style: { maxWidth: '50px' },
+          style: this.md ? { maxWidth: '60px' } : {},
           top: -105 // Toolbar + Tabbar heights
         },
         {
