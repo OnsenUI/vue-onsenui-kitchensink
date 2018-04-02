@@ -25,3 +25,7 @@ yarn run dev
 # build for production with minification
 yarn run build
 ```
+
+## Licensing
+
+[MIT License](LICENSE.md)
