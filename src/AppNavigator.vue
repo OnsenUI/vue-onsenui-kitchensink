@@ -4,6 +4,7 @@
     :pop-page="storePop"
     :options="options"
     @postpush="showPopTip"
+    :class="{ 'border-radius': borderRadius }"
   ></v-ons-navigator>
 </template>
 
@@ -25,6 +26,9 @@ export default {
     },
     options() {
       return this.$store.state.navigator.options;
+    },
+    borderRadius() {
+      return new URL(window.location).searchParams.get('borderradius') !== null;
     }
   },
   methods: {
