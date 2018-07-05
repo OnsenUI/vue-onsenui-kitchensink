@@ -6,6 +6,10 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@onsenui/custom-elements/-/custom-elements-1.0.0.tgz#8e2b5c8968b8d94da70c6e92ecc56b47f79a0ff3"
 
+"@onsenui/fastclick@1.1.1":
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/@onsenui/fastclick/-/fastclick-1.1.1.tgz#0708ec6c7bdca8b87a028deb0dbb66b92001f737"
+
 abbrev@1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/abbrev/-/abbrev-1.1.0.tgz#d0554c2256636e2f56e7c2e5ad183f859428d81f"
@@ -3173,11 +3177,12 @@ onecolor@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/onecolor/-/onecolor-3.0.4.tgz#75a46f80da6c7aaa5b4daae17a47198bd9652494"
 
-onsenui@~2.8.0:
-  version "2.8.0"
-  resolved "https://registry.yarnpkg.com/onsenui/-/onsenui-2.8.0.tgz#08f5b9abaa51098db88b86ad4c309eaefc11cc5a"
+onsenui@^2.10.2:
+  version "2.10.2"
+  resolved "https://registry.yarnpkg.com/onsenui/-/onsenui-2.10.2.tgz#09bc92a9759cf757adb16a874ef5cefe28b4c521"
   dependencies:
     "@onsenui/custom-elements" "1.0.0"
+    "@onsenui/fastclick" "1.1.1"
     core-js "^2.5.1"
 
 opn@4.0.2:
@@ -4954,9 +4959,11 @@ vue-loader@^12.0.4:
     vue-style-loader "^3.0.0"
     vue-template-es2015-compiler "^1.2.2"
 
-vue-onsenui@~2.4.0:
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/vue-onsenui/-/vue-onsenui-2.4.0.tgz#b88914f8bac1a45afc5e7d5160951480690fd369"
+vue-onsenui@^2.6.1:
+  version "2.6.1"
+  resolved "https://registry.yarnpkg.com/vue-onsenui/-/vue-onsenui-2.6.1.tgz#4af008f989e3e68ffc9cc0870522b09b77d853ce"
+  dependencies:
+    babel-runtime "^6.26.0"
 
 vue-style-loader@^3.0.0:
   version "3.0.1"

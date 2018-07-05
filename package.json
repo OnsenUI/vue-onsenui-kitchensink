@@ -12,9 +12,9 @@
     "deploy": "npm run demo:index && ghpages -p www"
   },
   "dependencies": {
-    "onsenui": "~2.8.0",
+    "onsenui": "^2.10.2",
     "vue": "^2.5.3",
-    "vue-onsenui": "~2.4.0",
+    "vue-onsenui": "^2.6.1",
     "vuex": "^3.0.1"
   },
   "devDependencies": {

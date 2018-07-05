@@ -7,7 +7,7 @@
     <v-ons-list-title>Access</v-ons-list-title>
     <v-ons-list>
       <v-ons-list-item v-for="(item, index) in access" :key="item.title"
-        :modifier="md && 'nodivider'"
+        :modifier="md ? 'nodivider' : ''"
         @click="loadView(index)"
       >
         <div class="left">
@@ -25,7 +25,7 @@
     <v-ons-list-title>Links</v-ons-list-title>
     <v-ons-list>
       <v-ons-list-item v-for="item in links" :key="item.title"
-        :modifier="md && 'nodivider'"
+        :modifier="md ? 'nodivider' : ''"
         @click="loadLink(item.url)"
       >
         <div class="left">

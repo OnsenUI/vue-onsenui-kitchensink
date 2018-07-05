@@ -11,7 +11,7 @@
 
     <v-ons-tabbar position="auto"
       swipeable
-      :modifier="md ? 'autogrow white-content' : null"
+      :modifier="md ? 'autogrow white-content' : ''"
       :on-swipe="md ? onSwipe : null"
       :tabbar-style="swipeTheme"
       :tabs="tabs"
