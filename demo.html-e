@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Onsen UI Kitchen Sink</title>
+
+    <style type="text/css">
+      ::-webkit-scrollbar {
+        display: none;
+      }
+      * {
+        font-family: Helvetica, sans-serif;
+      }
+      h1 {
+        color: #fff;
+        text-align: center;
+        font-weight: 300;
+        font-size: 50px;
+        margin: 30px 0 10px 0;
+        padding: 0;
+      }
+      a {
+        color: #fff;
+        text-decoration: none;
+      }
+      .qr {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        color: white;
+      }
+      @media (max-width: 1150px) {
+        .qr {
+          display: none;
+        }
+      }
+      .container {
+        margin: 0 auto;
+        max-width: 900px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+      .full-view {
+        margin-bottom: 14px;
+      }
+    </style>
+  </head>
+  <body style="background: hsl(6, 91%, 62%); -ms-overflow-style: none">
+    <a href="./main.html" target="_blank" class="qr">
+      <p style="text-align: center">Try it in your device:</p>
+      <img src="demo/img/qrcode_simple.svg" style="width: 150px; display: block; border-radius: 6px; border: 6px solid white; box-sizing: border-box">
+    </a>
+    <h1><a href="https://github.com/onsenui/vue-onsenui-kitchensink">Onsen UI for Vue Kitchensink</a></h1>
+    <div style="text-align: center;"><a href="https://github.com/onsenui/vue-onsenui-kitchensink">Show Source Code</a></div>
+    <div style="text-align: center; margin-top: 25px">
+      <div class="container">
+        <div>
+          <div class="full-view"><a href="./main.html?platform=ios">Open in Full View</a></div>
+          <div onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';" id="iosView" style="display:inline-block; box-sizing: border-box; background-size: contain; width: 350px; height: 705px; padding: 78px 19px 78px 19px; vertical-align: middle; margin-bottom: 30px; margin-right: 15px; background-image: url('demo/img/iphone6plus.png');">
+          <iframe style="width: 100%; height: 100%; border: none" src="index.html?platform=ios" scrolling="no" class="lazy-hidden"></iframe>
+        </div>
+        </div>
+        <div>
+          <div class="full-view"><a href="./main.html?platform=android">Open in Full View</a></div>
+          <div onmouseover="document.body.style.overflow='hidden';" onmouseout="document.body.style.overflow='auto';" id="androidView" style="display:inline-block; box-sizing: border-box; background-size: contain; width: 350px; height: 700px; padding: 61px 13px 56px 11px; vertical-align: middle; margin-bottom: 30px; background-image: url('demo/img/nexus6.png');">
+          <iframe style="width: 100%; height: 100%; border: none" src="index.html?platform=android" scrolling="no" class="lazy-hidden"></iframe>
+        </div>
+        </div>
+      </div>
+      <p style="text-align: center"><a href="https://onsen.io/vue/">Visit Onsen UI Website</a></p>
+	 </div>
+  </body>
+</html>
