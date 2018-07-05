@@ -8,10 +8,11 @@
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --host 0.0.0.0 --port 7000",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "build:watch": "cross-env NODE_ENV=production WEBPACK_WATCH=true webpack --progress --hide-modules",
-    "demo:index": "mv www/index.html www/main.html && sed -i 's/index\\.html/main\\.html/' www/demo.html && mv www/demo.html www/index.html",
-    "deploy": "npm run demo:index && ghpages -p www"
+    "demo:index": "mv www/index.html www/main.html && sed -i -e 's/index\\.html/main\\.html/' www/demo.html && mv www/demo.html www/index.html",
+    "deploy": "npm run build && npm run demo:index && gh-pages -d www"
   },
   "dependencies": {
+    "gh-pages": "^1.2.0",
     "onsenui": "^2.10.2",
     "vue": "^2.5.3",
     "vue-onsenui": "^2.6.1",
